@@ -10,7 +10,8 @@ import { ApolloClient, InMemoryCache, HttpLink } from "@apollo/client";
 const cache = new InMemoryCache();
 const link = new HttpLink({
   // uri: `${process.env.REACT_APP_BACKEND_URL}/graphql`,
-  uri: `http://localhost:1337/graphql`,
+  // uri: `http://localhost:1337/graphql`,
+  uri: `https://strapi-v1ph.onrender.com/graphql`,
 });
 const client = new ApolloClient({
   cache,

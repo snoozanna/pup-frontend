@@ -16,11 +16,13 @@ const Article = () => {
         if (articles.data.length) {
           const imageUrl =
             process.env.NODE_ENV !== "development"
-              ? articles.data[0].attributes.image.data.attributes.url
+              ? "https://strapi-v1ph.onrender.com/" +
+                articles.data[0].attributes.image.data.attributes.url
               : // : process.env.REACT_APP_BACKEND_URL +
                 "http://localhost:1337" +
                 articles.data[0].attributes.image.data.attributes.url;
           // console.log("articles", articles.data[0].attributes.content);
+          console.log("imageURL", imageUrl);
           return (
             <div>
               <div

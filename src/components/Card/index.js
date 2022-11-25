@@ -4,10 +4,13 @@ import { Link } from "react-router-dom";
 const Card = ({ article }) => {
   const imageUrl =
     process.env.NODE_ENV !== "development"
-      ? article.attributes.image.data.attributes.url
-      : "http://localhost:1337" +
+      ? "https://strapi-v1ph.onrender.com/" +
+        article.attributes.image.data.attributes.url
+      : // : "http://localhost:1337" +
+
         //  : process.env.REACT_APP_BACKEND_URL +
         article.attributes.image.data.attributes.url;
+  // console.log("imageURL", imageUrl);
   return (
     <Link to={`/article/${article.attributes.slug}`} className="uk-link-reset">
       <div className="uk-card uk-card-muted">
