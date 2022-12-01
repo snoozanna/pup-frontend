@@ -16,7 +16,7 @@ const WhatsOn = () => {
               eos dicta tempora voluptate? Provident a rem tempora. Modi tempora
               similique possimus!
             </p>
-            <a href="#" alt="alt " class="highlighted">
+            <a href="https://coneyhq.org/" alt="alt " class="highlighted">
               Book now
             </a>
           </div>
@@ -29,7 +29,7 @@ const WhatsOn = () => {
               itaque recusandae expedita saepe rem est odit enim, dignissimos
               temporibus eum velit a? Nam?
             </p>
-            <a href="#" alt="alt ">
+            <a href="https://coneyhq.org/" alt="alt ">
               Book now
             </a>
           </div>

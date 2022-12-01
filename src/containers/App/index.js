@@ -1,6 +1,6 @@
 import React from "react";
 import { Routes, Route } from "react-router-dom";
-import Nav from "./../../components/Nav";
+// import Nav from "./../../components/Nav";
 import Landing from "./../Landing/index.js";
 import Article from "../Article/index.js";
 import Piece from "../Piece/index.js";

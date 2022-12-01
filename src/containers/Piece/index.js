@@ -2,7 +2,7 @@ import React from "react";
 import { useParams } from "react-router";
 import Query from "./../../components/Query/index.js";
 import ReactMarkdown from "react-markdown";
-import Moment from "react-moment";
+// import Moment from "react-moment";
 import rehypeRaw from "rehype-raw";
 
 import PIECE_QUERY from "./../../queries/piece/index.js";

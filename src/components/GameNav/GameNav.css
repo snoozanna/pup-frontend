@@ -13,7 +13,6 @@ nav {
 }
 
 .uk-navbar-container.nav {
-  /* background: #fff !important; */
   background: var(--purple);
   font-family: var(--font-headings);
 }

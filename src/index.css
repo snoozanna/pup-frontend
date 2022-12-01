@@ -1,5 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;600&display=swap");
-@import url('https://fonts.googleapis.com/css2?family=Bungee+Shade&family=Fredoka+One&family=Silkscreen&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Bungee+Shade&family=Fredoka+One&family=Silkscreen&display=swap");
 
 :root {
   --green: #2bcdb5;
@@ -9,11 +9,10 @@
   --blue: #009ef4;
   --white: #f9f8f5;
   --font-headings: "Bungee Shade", sans-serif;
-    /* --font-headings: "Fredoka One", sans-serif; */
-        --font-headings: "Silkscreen", sans-serif;
+  --font-headings: "Silkscreen", sans-serif;
   --font-body: "Space Grotesk", sans-serif;
   --font-color: rgb(241, 235, 235);
-  --font-size: 1.6rem
+  --font-size: 1.6rem;
   --padding: 1.5rem;
 }
 
@@ -22,15 +21,15 @@ body {
   min-height: 100vh;
   color: var(--font-color);
   font-size: var(--font-size);
-  font-family: var(--font-body) ;
+  font-family: var(--font-body);
 }
 
 a {
   text-decoration: none;
-  color: var(--font-color) !important
+  color: var(--font-color) !important;
 }
 
-button{
+button {
   padding: 8px;
   background-color: white;
   border: 1px solid black;
@@ -42,12 +41,14 @@ button.raise:focus {
   box-shadow: 0 0.5em 0.5em -0.4em 10px;
   transform: translateY(-0.25em);
   background-color: var(--purple);
-color: var(--white);
+  color: var(--white);
 }
 
-h1, h2, h3{
-     color: var(--font-color);
-       font-family: var(--font-headings);
+h1,
+h2,
+h3 {
+  color: var(--font-color);
+  font-family: var(--font-headings);
 }
 
 h1 {
@@ -56,13 +57,10 @@ h1 {
 
 h3 {
   font-weight: 500;
-    letter-spacing: 0.2rem;
+  letter-spacing: 0.2rem;
   line-height: 1.13636;
   text-transform: uppercase;
 }
-
-
-
 
 #editor {
   font-size: 16px;
@@ -75,9 +73,6 @@ img:hover {
   transition: opacity 0.25s cubic-bezier(0.39, 0.575, 0.565, 1);
 }
 
-
-.highlighted{
-  /* text-decoration: underline; */
-  /* padding-bottom: 3px */
+.highlighted {
   border-bottom: 1px solid var(--font-color);
 }
