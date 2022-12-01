@@ -1,0 +1,15 @@
+nav {
+  display: flex;
+}
+
+.uk-navbar-item,
+.uk-navbar-nav > li > a,
+.uk-navbar-toggle {
+  font-size: 1.6rem;
+}
+
+.uk-navbar-container.nav {
+  /* background: #fff !important; */
+  background: var(--purple);
+  font-family: var(--font-headings);
+}

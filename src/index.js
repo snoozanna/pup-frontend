@@ -10,6 +10,7 @@ import App from "./containers/App";
 import client from "./utils/apolloClient";
 
 import "./index.css";
+import "./styles/generics.css";
 
 const root = createRoot(document.getElementById("root"));
 root.render(

@@ -1,11 +1,11 @@
 import React from "react";
-
 import { Link } from "react-router-dom";
+import "./Nav.css";
 
 const Nav = () => {
   return (
     <div>
-      <nav className="uk-navbar-container" data-uk-navbar>
+      <nav className="uk-navbar-container nav" data-uk-navbar>
         <div className="uk-navbar-left">
           <ul className="uk-navbar-nav">
             <li>

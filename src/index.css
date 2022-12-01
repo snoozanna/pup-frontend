@@ -1,28 +1,68 @@
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;600&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Bungee+Shade&family=Fredoka+One&family=Silkscreen&display=swap');
+
+:root {
+  --green: #2bcdb5;
+  --purple: #7736db;
+  --yellow: #ffc548;
+  --pink: #fa7f98;
+  --blue: #009ef4;
+  --white: #f9f8f5;
+  --font-headings: "Bungee Shade", sans-serif;
+    /* --font-headings: "Fredoka One", sans-serif; */
+        --font-headings: "Silkscreen", sans-serif;
+  --font-body: "Space Grotesk", sans-serif;
+  --font-color: rgb(241, 235, 235);
+  --font-size: 1.6rem
+  --padding: 1.5rem;
+}
+
+body {
+  background-color: var(--purple);
+  min-height: 100vh;
+  color: var(--font-color);
+  font-size: var(--font-size);
+  font-family: var(--font-body) ;
+}
+
 a {
   text-decoration: none;
+  color: var(--font-color) !important
+}
+
+button{
+  padding: 8px;
+  background-color: white;
+  border: 1px solid black;
+  border-radius: 5px;
+}
+
+button.raise:hover,
+button.raise:focus {
+  box-shadow: 0 0.5em 0.5em -0.4em 10px;
+  transform: translateY(-0.25em);
+  background-color: var(--purple);
+color: var(--white);
+}
+
+h1, h2, h3{
+     color: var(--font-color);
+       font-family: var(--font-headings);
 }
 
 h1 {
-  font-family: Staatliches;
-  font-size: 120px;
+  font-size: 4rem;
 }
 
-#category {
-  font-family: Staatliches;
+h3 {
   font-weight: 500;
-}
-
-#title {
-  letter-spacing: 0.4px;
-  font-size: 22px;
-  font-size: 1.375rem;
+    letter-spacing: 0.2rem;
   line-height: 1.13636;
+  text-transform: uppercase;
 }
 
-#banner {
-  margin: 20px;
-  height: 800px;
-}
+
+
 
 #editor {
   font-size: 16px;
@@ -30,12 +70,14 @@ h1 {
   line-height: 1.75;
 }
 
-.uk-navbar-container {
-  background: #fff !important;
-  font-family: Staatliches;
-}
-
 img:hover {
   opacity: 1;
   transition: opacity 0.25s cubic-bezier(0.39, 0.575, 0.565, 1);
+}
+
+
+.highlighted{
+  /* text-decoration: underline; */
+  /* padding-bottom: 3px */
+  border-bottom: 1px solid var(--font-color);
 }

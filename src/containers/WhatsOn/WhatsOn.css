@@ -1,0 +1,9 @@
+.event {
+  margin-bottom: 2rem;
+  max-width: 1080px;
+}
+
+.eventTitle {
+  font-size: 3rem;
+  font-weight: 400;
+}
