@@ -72,3 +72,4 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 ### Thank yous
 
 Thank you to [https://designshack.net/articles/css/code-a-spinning-circular-menu-with-css/] for the spinning circle menu
+// "homepage": "https://youhavefoundconey.net/suzanna/"
