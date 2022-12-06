@@ -1,0 +1,33 @@
+.note {
+  grid-area: e;
+  background-color: antiquewhite;
+  width: fit-content;
+  height: fit-content;
+  box-shadow: 0 6px 11px rgb(0 0 0 / 40%);
+  transform: skewX(-3deg);
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+  padding: 1rem;
+}
+
+.note > h3 {
+  color: black;
+}
+
+.note > p {
+  color: black;
+}
+
+.note:hover {
+  box-shadow: 0 14px 16px rgba(0, 0, 0, 0.24);
+  transform: skewX(1deg);
+}
+
+.pin {
+  width: 15%;
+}
+.pickRandom {
+  grid-area: f;
+}

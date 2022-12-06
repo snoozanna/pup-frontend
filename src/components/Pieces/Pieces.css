@@ -1,0 +1,10 @@
+.pieces-container {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 2rem;
+  gap: 2.5rem;
+}
+
+.pieces-container > a.piece {
+  width: 30%;
+}

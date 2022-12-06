@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import "./GameCard.css";
 
 const Card = ({ piece }) => {
   const imageUrl =
@@ -10,18 +11,21 @@ const Card = ({ piece }) => {
     piece.attributes.image.data.attributes.url;
   // console.log("imageURL", imageUrl);
   return (
-    <Link to={`/piece/${piece.attributes.slug}`} className="uk-link-reset">
-      <div className="uk-card uk-card-muted">
-        <div className="uk-card-media-top">
+    <Link
+      to={`/piece/${piece.attributes.slug}`}
+      className="uk-link-reset piece"
+    >
+      <div className="piece-wrapper">
+        <div className="img-wrapper">
           <img
             src={imageUrl}
             alt={piece.attributes.image.data.attributes.url}
             height="100"
           />
         </div>
-        <div className="uk-card-body">
+        <div>
           <h3 className="">{piece.attributes.title}</h3>
-          <p className="">{piece.attributes.description}</p>
+          <p className="">{piece.attributes.oneline}</p>
         </div>
       </div>
     </Link>

@@ -24,6 +24,13 @@ body {
   font-family: var(--font-body);
 }
 
+main {
+  padding: 2rem;
+  padding-top: 70px;
+  padding-bottom: 70px;
+  max-width: 1080px;
+}
+
 a {
   text-decoration: none;
   color: var(--font-color) !important;
@@ -62,6 +69,17 @@ h3 {
   text-transform: uppercase;
 }
 
+.funtitle {
+  background-color: var(--yellow);
+  width: fit-content;
+  padding: 1rem;
+  color: black;
+  -webkit-text-stroke-width: 1.1px;
+  -webkit-text-stroke-color: var(--white);
+  transform: skew(1deg, -3deg);
+  box-shadow: 7px 7px black;
+}
+
 #editor {
   font-size: 16px;
   font-size: 1rem;
@@ -75,4 +93,26 @@ img:hover {
 
 .highlighted {
   border-bottom: 1px solid var(--font-color);
+}
+
+/* SPINNING ANIMATION */
+
+.spinning {
+  animation-name: spin;
+  animation-duration: 100000ms;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  /* transform: rotate(3deg); */
+  /* transform: rotate(0.3rad);/ */
+  /* transform: rotate(3grad); */
+  /* transform: rotate(.03turn);  */
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(45deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }

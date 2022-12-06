@@ -1,0 +1,48 @@
+.pickRandom.circle {
+  min-width: 200px;
+  width: fit-content;
+  min-height: 200px;
+  height: fit-content;
+  border-radius: 50%;
+  z-index: 10;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  box-shadow: 7px 7px black;
+  margin: auto;
+  padding: 1rem;
+}
+
+.pickRandom.circle:hover {
+  cursor: pointer;
+}
+
+.pickRandom.circle > h2.pick {
+  max-width: 80%;
+  font-size: 3.5rem;
+  margin-bottom: 0;
+}
+
+.randomTitle-wrapper > h3.randomTitle {
+  font-size: 3rem;
+  color: black;
+  padding: 1rem;
+  margin-bottom: 0;
+}
+
+.circle.green {
+  background-color: var(--green);
+}
+
+.circle.yellow {
+  background-color: var(--yellow);
+}
+
+.circle.pink {
+  background-color: var(--pink);
+}
+
+.circle.blue {
+  background-color: var(--blue);
+}

@@ -7,7 +7,9 @@ const PIECES_QUERY = gql`
         attributes {
           slug
           title
-          description
+          fullDescription
+          oneline
+          revealText
           category {
             data {
               attributes {

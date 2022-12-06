@@ -12,6 +12,11 @@ const Nav = () => {
             </Link>
           </li>
           <li>
+            <Link to={`/home`} className="uk-link-reset">
+              Home
+            </Link>
+          </li>
+          <li>
             <Link to={`/whats-on`} className="uk-link-reset">
               Whats on
             </Link>

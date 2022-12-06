@@ -1,0 +1,4 @@
+.piece-wrapper > .img-wrapper > img {
+  box-shadow: 7px 7px black;
+  margin-bottom: 2rem;
+}

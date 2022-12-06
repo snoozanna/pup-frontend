@@ -11,7 +11,8 @@ const PIECE_QUERY = gql`
           playtime
           instructions
           credits
-          description
+          fullDescription
+          oneline
           category {
             data {
               attributes {

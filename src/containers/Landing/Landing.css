@@ -44,14 +44,22 @@ section.landing {
 .landing-container {
   background-color: var(--white);
   border: solid black 1px;
+  box-shadow: 7px 7px black;
   padding: 2rem;
   border-radius: 7px;
   margin-bottom: 2rem;
   z-index: 11;
 }
 
+.landing-title {
+  z-index: 19;
+}
+
 .landing-title > h1 {
   color: black;
+  font-size: 9rem;
+  -webkit-text-stroke-width: 2px;
+  -webkit-text-stroke-color: var(--white);
 }
 
 h1 > span {

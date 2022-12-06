@@ -1,3 +1,12 @@
+main.whatson > h1.funtitle {
+  display: inline-block;
+  margin-inline-end: 2rem;
+}
+
+main.whatson > h2.tagline {
+  display: inline-block;
+}
+
 .event {
   margin-bottom: 2rem;
   max-width: 1080px;

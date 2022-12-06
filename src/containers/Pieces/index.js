@@ -5,19 +5,16 @@ import PIECES_QUERY from "../../queries/pieces/pieces";
 
 const PiecesList = () => {
   return (
-    <div>
+    <main class="pieces">
       {/* <GameNav /> */}
-      <div className="uk-section">
-        <div className="uk-container uk-container-large">
-          <h1>Pieces to play</h1>
-          <Query query={PIECES_QUERY}>
-            {({ data: { pieces } }) => {
-              return <Pieces pieces={pieces.data} />;
-            }}
-          </Query>
-        </div>
-      </div>
-    </div>
+
+      <h1 className="funtitle">Pieces to play</h1>
+      <Query query={PIECES_QUERY}>
+        {({ data: { pieces } }) => {
+          return <Pieces pieces={pieces.data} />;
+        }}
+      </Query>
+    </main>
   );
 };
 
