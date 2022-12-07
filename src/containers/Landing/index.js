@@ -19,11 +19,11 @@ const Landing = () => {
           First things first, would you like to sign up to the mailing list?
         </p>
         <div className="options-container">
-          <Link to={`/pieces`} className="uk-link-reset">
+          <Link to={`/sign-up`} className="uk-link-reset">
             <button className="raise">Yes</button>
           </Link>
 
-          <Link to={`/pieces`} className="uk-link-reset">
+          <Link to={`/home`} className="uk-link-reset">
             <button className="raise"> Maybe later</button>
           </Link>
 

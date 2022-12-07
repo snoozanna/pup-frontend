@@ -27,7 +27,7 @@ const Nav = () => {
             </Link>
           </li>
           <li>
-            <Link to={`/whats-on`} className="uk-link-reset">
+            <Link to={`/sign-up`} className="uk-link-reset">
               Sign up
             </Link>
           </li>
