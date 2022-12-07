@@ -50,7 +50,10 @@ const Piece = () => {
                   <>
                     <h3>Great!</h3>
                     <p>
-                      {" "}
+                      This can be bespoke copy for each game. Ie if there are
+                      separate links to prepare and to play.
+                    </p>
+                    <p>
                       Some copy about donating... If you are able to donate that
                       would be great but if not go ahead!
                     </p>
