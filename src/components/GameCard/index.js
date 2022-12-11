@@ -10,6 +10,8 @@ const Card = ({ piece }) => {
     //     //  : process.env.REACT_APP_BACKEND_URL +
     piece.attributes.image.data.attributes.url;
   // console.log("imageURL", imageUrl);
+  const tags = piece.attributes.tags.data;
+
   return (
     <Link
       to={`/piece/${piece.attributes.slug}`}
@@ -26,6 +28,11 @@ const Card = ({ piece }) => {
         <div>
           <h3 className="">{piece.attributes.title}</h3>
           <p className="">{piece.attributes.oneline}</p>
+        </div>
+        <div className="tags-wrapper">
+          {tags.map((tag) => {
+            return <div className="tag-item "> {tag.attributes.name} </div>;
+          })}
         </div>
       </div>
     </Link>

@@ -12,7 +12,6 @@ import "./Piece.css";
 const Piece = () => {
   let { slug } = useParams();
   let [open, setOpen] = useState(false);
-  console.log(open);
   useEffect(() => {
     setOpen(false);
   }, []);
@@ -33,6 +32,13 @@ const Piece = () => {
               <div className="title-wrapper">
                 <h1>{pieces.data[0].attributes.title}</h1>
                 <p>{pieces.data[0].attributes.credits}</p>
+                <p>
+                  {" "}
+                  <ReactMarkdown
+                    children={pieces.data[0].attributes.fullDescription}
+                    rehypePlugins={[rehypeRaw]}
+                  ></ReactMarkdown>
+                </p>
               </div>
               <img
                 className="pieceImg"
@@ -41,14 +47,12 @@ const Piece = () => {
               />
 
               <div className="description">
-                <ReactMarkdown
-                  children={pieces.data[0].attributes.fullDescription}
-                  rehypePlugins={[rehypeRaw]}
-                ></ReactMarkdown>
-                <button onClick={() => setOpen(!open)}>I'd like to try!</button>
                 {open ? (
                   <>
-                    <h3>Great!</h3>
+                    {/* <ReactMarkdown
+                      children={pieces.data[0].attributes.revealText}
+                      rehypePlugins={[rehypeRaw]}
+                    ></ReactMarkdown> */}
                     <p>
                       This can be bespoke copy for each game. Ie if there are
                       separate links to prepare and to play.
@@ -58,39 +62,36 @@ const Piece = () => {
                       would be great but if not go ahead!
                     </p>
                     <div className="buttonWrapper">
-                      <form
-                        action="https://www.paypal.com/donate"
-                        method="post"
+                      <a
+                        href="https://www.paypal.com/donate/?business=EU8572VTBBBP4&no_recurring=0&item_name=This+is+a+donation+for+X+game&currency_code=GBP"
                         target="_blank"
+                        rel="noreferrer"
+                        class="buttonItem"
                       >
-                        <input
-                          type="hidden"
-                          name="business"
-                          value="EU8572VTBBBP4"
-                        />
-                        <input type="hidden" name="no_recurring" value="0" />
-                        <input type="hidden" name="currency_code" value="GBP" />
-                        <input
-                          className="donateBtn"
-                          type="image"
-                          src="https://pics.paypal.com/00/s/NWMwOTFjNjItNDlhMy00NTkwLWEzNjYtNzQ1NzY1MWJiZWM4/file.PNG"
-                          border="0"
-                          name="submit"
-                          title="PayPal - The safer, easier way to pay online!"
-                          alt="Donate with PayPal button"
-                        />
-                        <img
-                          alt=""
-                          border="0"
-                          src="https://www.paypal.com/en_GB/i/scr/pixel.gif"
-                          width="1"
-                          height="1"
-                        />
-                      </form>
-                      <button className="readyToPlay">Play</button>
+                        <button className="funButton donate">Donate </button>
+                      </a>
+
+                      <a
+                        href="https://afterlifeexperience.org/"
+                        target="_blank"
+                        rel="noreferrer"
+                        class="buttonItem"
+                      >
+                        <button className="funButton ready">Play </button>
+                      </a>
                     </div>
                   </>
-                ) : null}
+                ) : (
+                  <>
+                    <button
+                      onClick={() => setOpen(!open)}
+                      className="funButton"
+                    >
+                      I'd like to try!
+                    </button>
+                    <div></div>
+                  </>
+                )}
               </div>
               <div className="keyInfo">
                 <h3 className="pieceTitle">Playtime</h3>

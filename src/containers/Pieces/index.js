@@ -5,7 +5,7 @@ import PIECES_QUERY from "../../queries/pieces/pieces";
 
 const PiecesList = () => {
   return (
-    <main class="pieces">
+    <main className="pieces">
       {/* <GameNav /> */}
 
       <h1 className="funtitle">Pieces to play</h1>

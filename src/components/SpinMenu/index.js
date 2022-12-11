@@ -1,5 +1,5 @@
 import { useState } from "react";
-import Pieces from "../Pieces/index.js";
+// import Pieces from "../Pieces/index.js";
 import Query from "../Query/index.js";
 import PIECES_QUERY from "../../queries/pieces/pieces";
 import { Link } from "react-router-dom";

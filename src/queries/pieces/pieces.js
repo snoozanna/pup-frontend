@@ -18,6 +18,14 @@ const PIECES_QUERY = gql`
               }
             }
           }
+          tags {
+            data {
+              attributes {
+                slug
+                name
+              }
+            }
+          }
           image {
             data {
               attributes {

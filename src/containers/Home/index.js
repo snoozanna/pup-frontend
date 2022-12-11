@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 import SpinMenu from "./../../components/SpinMenu/index.js";
 import Note from "../Note/index.js";
 import rabbit from "./../../assets/rabbit.png";

@@ -2,3 +2,18 @@
   box-shadow: 7px 7px black;
   margin-bottom: 2rem;
 }
+
+.tags-wrapper {
+  display: flex;
+}
+
+.tag-item {
+  background-color: var(--yellow);
+  width: fit-content;
+  padding: 0.5rem;
+  color: black;
+  transform: skew(1deg, -3deg);
+  box-shadow: 4px 4px black;
+  font-size: 1.2rem;
+  margin-inline-end: 1rem;
+}

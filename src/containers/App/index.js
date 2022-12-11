@@ -4,11 +4,12 @@ import { Routes, Route } from "react-router-dom";
 import Landing from "./../Landing/index.js";
 import Home from "./../Home/index.js";
 import SignUp from "./../SignUp/index.js";
-import Article from "../Article/index.js";
+
 import Piece from "../Piece/index.js";
-import ArticlesList from "../Articles/index.js";
+
 import PiecesList from "../Pieces/index.js";
-import Category from "../Categories/index.js";
+
+import Tag from "../Tags/index.js";
 import WhatsOn from "../WhatsOn/index.js";
 import Footer from "../../components/Footer";
 
@@ -19,13 +20,12 @@ function App() {
       <Routes>
         <Route path="/" element={<Landing />} exact />
         <Route path="/home" element={<Home />} exact />
-        <Route path="/articles-list" element={<ArticlesList />} exact />
+        <Route path="/pieces-list" element={<PiecesList />} exact />
         <Route path="/pieces" element={<PiecesList />} exact />
         <Route path="/whats-on" element={<WhatsOn />} exact />
         <Route path="/sign-up" element={<SignUp />} exact />
         <Route path="/piece/:slug" element={<Piece />} exact />
-        <Route path="/article/:slug" element={<Article />} exact />
-        <Route path="/category/:slug" element={<Category />} exact />
+        <Route path="/tag/:slug" element={<Tag />} exact />
       </Routes>
       <Footer />
     </div>

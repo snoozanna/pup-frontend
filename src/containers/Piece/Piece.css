@@ -14,6 +14,9 @@ main.piece-wrapper {
 
 .description {
   grid-area: c;
+  display: flex;
+  flex-direction: column;
+  /* justify-content: space-around; */
 }
 
 .title-wrapper > h1 {
@@ -25,6 +28,7 @@ h3.pieceTitle {
   font-size: 3rem;
   /* display: inline; */
   margin-block-end: 0.2rem;
+  color: black;
 }
 
 .pieceImg {
@@ -38,16 +42,31 @@ h3.pieceTitle {
 .keyInfo {
   /* border: solid 1px black; */
   grid-area: d;
+  padding: 1rem;
+  background-color: antiquewhite;
+  opacity: 0.4;
+  color: black;
 }
 
-input.donateBtn {
+.buttonItem {
   max-width: 120px;
   margin-inline-end: 2rem;
 }
 
-button.readyToPlay {
+button.funButton.donate {
+  background-color: var(--yellow);
+  font-family: var(--font-headings);
+}
+
+button.funButton.ready {
   background-color: var(--green);
   font-family: var(--font-headings);
+}
+
+button.funButton.ready:active,
+button.funButton.donate:active {
+  box-shadow: 2px 2px black;
+  transform: translateY(4px);
 }
 
 .buttonWrapper {

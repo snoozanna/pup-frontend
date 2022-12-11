@@ -12,6 +12,7 @@ const PIECE_QUERY = gql`
           instructions
           credits
           fullDescription
+          revealText
           oneline
           category {
             data {
