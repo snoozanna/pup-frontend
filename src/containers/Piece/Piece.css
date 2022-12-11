@@ -63,12 +63,11 @@ button.funButton.ready {
   font-family: var(--font-headings);
 }
 
-button.funButton.ready:active,
-button.funButton.donate:active {
-  box-shadow: 2px 2px black;
-  transform: translateY(4px);
-}
-
 .buttonWrapper {
   display: flex;
+}
+
+button.funButton.ready.orange {
+  background-color: var(--orange);
+  font-family: var(--font-headings);
 }

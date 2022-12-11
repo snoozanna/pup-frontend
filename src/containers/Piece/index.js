@@ -49,37 +49,10 @@ const Piece = () => {
               <div className="description">
                 {open ? (
                   <>
-                    {/* <ReactMarkdown
+                    <ReactMarkdown
                       children={pieces.data[0].attributes.revealText}
                       rehypePlugins={[rehypeRaw]}
-                    ></ReactMarkdown> */}
-                    <p>
-                      This can be bespoke copy for each game. Ie if there are
-                      separate links to prepare and to play.
-                    </p>
-                    <p>
-                      Some copy about donating... If you are able to donate that
-                      would be great but if not go ahead!
-                    </p>
-                    <div className="buttonWrapper">
-                      <a
-                        href="https://www.paypal.com/donate/?business=EU8572VTBBBP4&no_recurring=0&item_name=This+is+a+donation+for+X+game&currency_code=GBP"
-                        target="_blank"
-                        rel="noreferrer"
-                        class="buttonItem"
-                      >
-                        <button className="funButton donate">Donate </button>
-                      </a>
-
-                      <a
-                        href="https://afterlifeexperience.org/"
-                        target="_blank"
-                        rel="noreferrer"
-                        class="buttonItem"
-                      >
-                        <button className="funButton ready">Play </button>
-                      </a>
-                    </div>
+                    ></ReactMarkdown>
                   </>
                 ) : (
                   <>

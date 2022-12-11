@@ -1,3 +1,6 @@
+main.home {
+  margin: auto;
+}
 section.home {
   min-height: 90vh;
   display: flex;
@@ -82,7 +85,7 @@ h1 > span {
 .corkboard {
   background-image: url("./../../assets/cork-board-background.png");
   background-size: cover;
-  width: 80%;
+  max-width: 1080px;
   height: 80%;
   border: 4px solid white;
   box-shadow: 7px 7px black;
@@ -90,9 +93,9 @@ h1 > span {
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: 1fr 1fr;
   grid-template-areas:
-    "a b c "
-    "d e f";
-  gap: 6rem;
+    "a1 a2 a3 "
+    "b1 b2 b3";
+  gap: 4rem;
   padding: 2rem;
 }
 

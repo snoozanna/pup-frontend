@@ -37,7 +37,7 @@ const SpinMenu = () => {
                       to={`/piece/${random.attributes.slug}`}
                       className="uk-link-reset"
                     >
-                      <button className="raise">Take me there!</button>
+                      <button className=" raise">Take me there!</button>
                     </Link>
                   </>
                 ) : (
