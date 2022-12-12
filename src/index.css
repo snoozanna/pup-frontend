@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;600&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Bungee+Shade&family=Fredoka+One&family=Silkscreen&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Comfortaa:wght@700&display=swap");
 
 :root {
   --green: #2bcdb5;
@@ -9,8 +10,16 @@
   --pink: #fa7f98;
   --blue: #009ef4;
   --white: #f9f8f5;
+  /* --green: #2bcdb5;
+  --purple: #583095;
+  --yellow: #e1d6bd;
+  --orange: #d67b64;
+  --pink: #cca2aa;
+  --blue: #53addd;
+  --white: #f9f8f5; */
   --font-headings: "Bungee Shade", sans-serif;
   --font-headings: "Silkscreen", sans-serif;
+  --font-headings: "Comfortaa", sans-serif;
   --font-body: "Space Grotesk", sans-serif;
   --font-color: rgb(241, 235, 235);
   --font-size: 1.6rem;
@@ -45,6 +54,10 @@ button {
   border-radius: 5px;
 }
 
+button.raise {
+  background-color: var(--green);
+}
+
 button.raise:hover,
 button.raise:focus {
   box-shadow: 0 0.5em 0.5em -0.4em 10px;
@@ -64,6 +77,17 @@ h1 {
   font-size: 4rem;
 }
 
+h2.siteTitle {
+  position: fixed;
+  top: 2rem;
+  right: 2rem;
+  text-align: right;
+}
+
+h2.siteTitle > span {
+  display: block;
+}
+
 h3 {
   font-weight: 500;
   letter-spacing: 0.2rem;
@@ -76,8 +100,8 @@ h3 {
   width: fit-content;
   padding: 1rem;
   color: black;
-  -webkit-text-stroke-width: 1.1px;
-  -webkit-text-stroke-color: var(--white);
+  /* -webkit-text-stroke-width: 1.1px;
+  -webkit-text-stroke-color: var(--white); */
   transform: skew(1deg, -3deg);
   box-shadow: 7px 7px black;
 }
@@ -115,7 +139,7 @@ img:hover {
 
 .spinning {
   animation-name: spin;
-  animation-duration: 100000ms;
+  animation-duration: 500000ms;
   animation-iteration-count: infinite;
   animation-timing-function: linear;
   /* transform: rotate(3deg); */

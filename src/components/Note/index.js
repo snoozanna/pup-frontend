@@ -12,7 +12,7 @@ const Note = (notice) => {
         className={`uk-link-reset note-wrapper  ${position}`}
         key={uid}
       >
-        <div className={`note`}>
+        <div className="note">
           <img src={pin} alt="pin" className="pin" />
           <h3>{subtitle}</h3>
           <h3 className="eventTitle">{eventTitle}</h3>

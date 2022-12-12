@@ -1,3 +1,7 @@
+.note-wrapper {
+  margin: auto;
+}
+
 .note {
   background-color: antiquewhite;
   width: fit-content;
@@ -13,6 +17,11 @@
 
 .note > h3 {
   color: black;
+}
+
+.note > h3.eventTitle {
+  color: black;
+  font-size: 2.4rem;
 }
 
 .note > p {

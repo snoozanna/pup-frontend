@@ -1,37 +1,34 @@
+import { Link } from "react-router-dom";
+import Query from "./../../components/Query/index.js";
+import ZOOMBAR_QUERY from "../../queries/whatson/whatson";
+import ReactMarkdown from "react-markdown";
+import rehypeRaw from "rehype-raw";
+
 import "./WhatsOn.css";
 const WhatsOn = () => {
   return (
-    <main className="whatson">
-      <h1 className="funtitle">Whats on</h1>
-      <h2 className="tagline">in the Coney Zoom bar</h2>
-
-      <div className="event">
-        <h3 className="eventTitle">Event 1</h3>
-        <p>25 December, 7pm</p>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo assumenda
-          quasi fuga neque non, ullam excepturi dolore, corporis eos dicta
-          tempora voluptate? Provident a rem tempora. Modi tempora similique
-          possimus!
-        </p>
-        <a href="https://coneyhq.org/" alt="alt " className="highlighted">
-          Book now
-        </a>
-      </div>
-      <div className="event">
-        <h3 className="eventTitle">Event 2</h3>
-        <p>1 January, 3am</p>
-        <p>
-          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Cupiditate
-          obcaecati assumenda facere, totam saepe odit! Quidem itaque recusandae
-          expedita saepe rem est odit enim, dignissimos temporibus eum velit a?
-          Nam?
-        </p>
-        <a href="https://coneyhq.org/" alt="alt" className="highlighted">
-          Book now
-        </a>
-      </div>
-    </main>
+    <Query query={ZOOMBAR_QUERY}>
+      {({ data: { zoombar } }) => {
+        zoombar = zoombar.data;
+        console.log("zoombar", zoombar);
+        return (
+          <main className="whatson">
+            <h1 className="funtitle">Whats on</h1>
+            <h2 className="tagline">in the Coney Zoom bar</h2>
+            <Link to={`/`} className>
+              <h2 className="siteTitle">
+                <span>The</span> <span>Pop Up</span>
+                <span>Playhouse</span>
+              </h2>
+            </Link>
+            <ReactMarkdown
+              children={zoombar.attributes.content}
+              rehypePlugins={[rehypeRaw]}
+            ></ReactMarkdown>{" "}
+          </main>
+        );
+      }}
+    </Query>
   );
 };
 

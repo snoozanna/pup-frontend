@@ -1,4 +1,4 @@
-// import { Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import Query from "./../../components/Query/index.js";
 import NOTICES_QUERY from "../../queries/notices/notices";
 import SpinMenu from "./../../components/SpinMenu/index.js";
@@ -14,9 +14,17 @@ const Home = () => {
 
         return (
           <>
+            <header>
+              <Link to={`/`} className>
+                <h2 className="siteTitle">
+                  <span>The</span> <span>Pop Up</span>
+                  <span>Playhouse</span>
+                </h2>
+              </Link>
+            </header>
             <main className="home">
-              <section className="home">
-                <h1 className="funtitle">Coney Notice Board</h1>
+              <h1 className="funtitle">Coney Notice Board</h1>
+              <section className="corkboard-wrapper">
                 <div className="corkboard">
                   {notices.map((notice) => {
                     console.log("notice", notice);
@@ -63,8 +71,14 @@ const Home = () => {
                         );
                     }
                   })}
+                  <a
+                    href="http://www.unregisteredsite.net/unmarkedentrance/"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    <img src={rabbit} alt="rabbit" className="rabbit" />
+                  </a>
                 </div>
-                <img src={rabbit} alt="rabbit" className="rabbit" />
               </section>
             </main>
           </>

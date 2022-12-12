@@ -1,7 +1,7 @@
 import gql from "graphql-tag";
 
 const NOTICES_QUERY = gql`
-  query Pieces {
+  query Notices {
     notices {
       data {
         attributes {

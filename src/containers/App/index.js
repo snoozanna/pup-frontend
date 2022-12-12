@@ -3,12 +3,10 @@ import { Routes, Route } from "react-router-dom";
 // import Nav from "./../../components/Nav";
 import Landing from "./../Landing/index.js";
 import Home from "./../Home/index.js";
+import NotFound from "./../404/index.js";
 import SignUp from "./../SignUp/index.js";
-
 import Piece from "../Piece/index.js";
-
 import PiecesList from "../Pieces/index.js";
-
 import Tag from "../Tags/index.js";
 import WhatsOn from "../WhatsOn/index.js";
 import Footer from "../../components/Footer";
@@ -26,6 +24,7 @@ function App() {
         <Route path="/sign-up" element={<SignUp />} exact />
         <Route path="/piece/:slug" element={<Piece />} exact />
         <Route path="/tag/:slug" element={<Tag />} exact />
+        <Route path="*" element={<NotFound />} />
       </Routes>
       <Footer />
     </div>

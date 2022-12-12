@@ -7,18 +7,13 @@ const Nav = () => {
       <nav>
         <ul className="uk-subnav uk-subnav-divider" uk-margin>
           <li>
-            <Link to={`/`} className="uk-link-reset">
-              Landing
-            </Link>
-          </li>
-          <li>
             <Link to={`/home`} className="uk-link-reset">
-              Home
+              Notice Board
             </Link>
           </li>
           <li>
             <Link to={`/whats-on`} className="uk-link-reset">
-              Whats on
+              Zoom Bar
             </Link>
           </li>
           <li>

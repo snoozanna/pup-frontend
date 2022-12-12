@@ -7,6 +7,12 @@ section.landing {
   text-align: center;
 }
 
+img.logo {
+  width: 20%;
+  position: fixed;
+  z-index: 16;
+}
+
 /* BACKGROUND */
 
 .shape {
@@ -15,6 +21,7 @@ section.landing {
   position: fixed;
   transform: rotate(45deg);
   z-index: 10;
+  opacity: 0.4;
 }
 
 .yellow.shape {
@@ -42,8 +49,10 @@ section.landing {
 }
 
 .landing-container {
-  background-color: var(--white);
+  /* background-color: var(--white); */
+  background-color: var(--yellow);
   border: solid black 1px;
+  transform: skew(1deg, -3deg);
   box-shadow: 7px 7px black;
   padding: 2rem;
   border-radius: 7px;
@@ -53,13 +62,15 @@ section.landing {
 
 .landing-title {
   z-index: 19;
+  background-color: cornsilk;
+  padding: 3rem;
+  border-radius: 10px;
+  border: solid 3px black;
 }
 
 .landing-title > h1 {
   color: black;
-  font-size: 9rem;
-  -webkit-text-stroke-width: 2px;
-  -webkit-text-stroke-color: var(--white);
+  font-size: 7rem;
 }
 
 h1 > span {

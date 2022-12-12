@@ -1,4 +1,4 @@
-// import { Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import "./SignUp.css";
 import { useForm } from "react-hook-form";
 
@@ -13,6 +13,12 @@ const SignUp = () => {
   return (
     <main className="landing">
       <h1 className="funtitle">Stay in touch - TBC</h1>
+      <Link to={`/`} className>
+        <h2 className="siteTitle">
+          <span>The</span> <span>Pop Up</span>
+          <span>Playhouse</span>
+        </h2>
+      </Link>
       {/* "handleSubmit" will validate your inputs before invoking "onSubmit" */}
       <form onSubmit={handleSubmit(onSubmit)}>
         <span>Name</span>
