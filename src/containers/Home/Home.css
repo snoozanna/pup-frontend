@@ -32,7 +32,7 @@ h1 > span {
 }
 
 .corkboard {
-  background-image: url("./../../assets/cork-board-background.png");
+  background-image: url("./../../assets/corkboard.jpg");
   background-size: cover;
   max-width: 1080px;
   height: 80%;

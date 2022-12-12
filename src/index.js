@@ -14,7 +14,7 @@ import "./styles/generics.css";
 
 const root = createRoot(document.getElementById("root"));
 root.render(
-  <Router>
+  <Router basename="/suzanna">
     <ApolloProvider client={client}>
       <App />
     </ApolloProvider>
