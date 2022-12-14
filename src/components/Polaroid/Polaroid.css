@@ -36,3 +36,13 @@
 .polaroid > .caption > p {
   margin-bottom: 0;
 }
+
+@media (max-width: 768px) {
+  .imgWrapper {
+    margin-bottom: 0.5rem;
+  }
+  .polaroid > .caption {
+    padding: 0rem;
+    font-size: 1.2rem;
+  }
+}

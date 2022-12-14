@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { useEffect } from "react";
 import Query from "./../../components/Query/index.js";
 import NOTICES_QUERY from "../../queries/notices/notices";
 import SpinMenu from "./../../components/SpinMenu/index.js";
@@ -7,6 +8,9 @@ import Polaroid from "./../../components/Polaroid/index.js";
 import rabbit from "./../../assets/rabbit.png";
 import "./Home.css";
 const Home = () => {
+  useEffect(() => {
+    document.title = "Notice Board";
+  }, []);
   return (
     <Query query={NOTICES_QUERY}>
       {({ data: { notices } }) => {
@@ -75,8 +79,9 @@ const Home = () => {
                     href="http://www.unregisteredsite.net/unmarkedentrance/"
                     target="_blank"
                     rel="noreferrer"
+                    className="rabbit"
                   >
-                    <img src={rabbit} alt="rabbit" className="rabbit" />
+                    <img src={rabbit} alt="rabbit" />
                   </a>
                 </div>
               </section>

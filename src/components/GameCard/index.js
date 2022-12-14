@@ -25,7 +25,7 @@ const Card = ({ piece }) => {
             height="100"
           />
         </div>
-        <div>
+        <div className="pieceInfoWrapper">
           <h3 className="">{piece.attributes.title}</h3>
           <p className="">{piece.attributes.oneline}</p>
         </div>

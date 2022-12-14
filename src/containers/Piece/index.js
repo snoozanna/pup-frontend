@@ -29,6 +29,15 @@ const Piece = () => {
 
           return (
             <main className="piece-wrapper">
+              <h2 className="siteTitle">
+                <span>The</span> <span>Pop Up</span>
+                <span>Playhouse</span>
+              </h2>
+              <img
+                className="pieceImg"
+                src={imageUrl}
+                alt={pieces.data[0].attributes.image.data.attributes.url}
+              />
               <div className="title-wrapper">
                 <h1>{pieces.data[0].attributes.title}</h1>
                 <p>{pieces.data[0].attributes.credits}</p>
@@ -40,12 +49,14 @@ const Piece = () => {
                   ></ReactMarkdown>
                 </p>
               </div>
-              <img
-                className="pieceImg"
-                src={imageUrl}
-                alt={pieces.data[0].attributes.image.data.attributes.url}
-              />
-
+              <div className="keyInfo">
+                <h3 className="pieceTitle">Playtime</h3>
+                <p>{pieces.data[0].attributes.playtime}</p>
+                <h3 className="pieceTitle">Instructions</h3>
+                <p>{pieces.data[0].attributes.instructions}</p>
+                <h3 className="pieceTitle">Players</h3>
+                <p>{pieces.data[0].attributes.players}</p>
+              </div>
               <div className="description">
                 {open ? (
                   <>
@@ -65,14 +76,6 @@ const Piece = () => {
                     <div></div>
                   </>
                 )}
-              </div>
-              <div className="keyInfo">
-                <h3 className="pieceTitle">Playtime</h3>
-                <p>{pieces.data[0].attributes.playtime}</p>
-                <h3 className="pieceTitle">Instructions</h3>
-                <p>{pieces.data[0].attributes.instructions}</p>
-                <h3 className="pieceTitle">Players</h3>
-                <p>{pieces.data[0].attributes.players}</p>
               </div>
             </main>
           );

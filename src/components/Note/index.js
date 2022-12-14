@@ -14,9 +14,9 @@ const Note = (notice) => {
       >
         <div className="note">
           <img src={pin} alt="pin" className="pin" />
-          <h3>{subtitle}</h3>
+          <h3 className="subtitle">{subtitle}</h3>
           <h3 className="eventTitle">{eventTitle}</h3>
-          <p>{date}</p>
+          <p className="info">{date}</p>
         </div>
       </Link>
     </>

@@ -8,3 +8,14 @@
 .pieces-container > a.piece {
   width: 30%;
 }
+
+@media (max-width: 768px) {
+  .pieces-container {
+    padding: 0;
+    gap: 2rem;
+    justify-content: flex-start;
+  }
+  .pieces-container > a.piece {
+    width: 46%;
+  }
+}

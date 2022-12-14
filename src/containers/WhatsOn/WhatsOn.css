@@ -8,11 +8,14 @@ main.whatson > h2.tagline {
 }
 
 .event {
-  margin-bottom: 2rem;
+  margin-bottom: 4rem;
   max-width: 1080px;
 }
 
 .eventTitle {
   font-size: 3rem;
   font-weight: 400;
+}
+
+@media (max-width: 768px) {
 }

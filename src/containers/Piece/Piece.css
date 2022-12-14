@@ -71,3 +71,20 @@ button.funButton.ready.orange {
   background-color: var(--orange);
   font-family: var(--font-headings);
 }
+
+@media (max-width: 768px) {
+  main.piece-wrapper {
+    display: flex;
+    flex-direction: column;
+    padding-top: 2rem;
+  }
+  .title-wrapper > h1 {
+    font-size: 4rem;
+  }
+  .buttonWrapper {
+    margin-block-end: 2.5rem;
+  }
+  h3.howtoplay {
+    font-size: 3rem;
+  }
+}

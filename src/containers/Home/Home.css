@@ -144,3 +144,32 @@ h1 > span {
     transform: translateX(calc(-32px / 5.5)) rotate(calc(-10deg / 5));
   }
 }
+
+@media (max-width: 768px) {
+  main.home > h1.funtitle {
+    margin-bottom: 4rem;
+    max-width: 50%;
+  }
+  .corkboard {
+    max-width: 100%;
+    height: 80%;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+      "a1 a2 "
+      "a3 b1"
+      "b2 b3";
+    gap: 1rem;
+    padding: 1rem;
+  }
+
+  .rabbit {
+    transform: rotate(-90deg);
+    right: -105px;
+    bottom: 0px;
+  }
+
+  .rabbit > img {
+    transform: rotate(-90deg);
+  }
+}

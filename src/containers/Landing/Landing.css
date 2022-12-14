@@ -87,3 +87,40 @@ h1 > span {
   justify-content: center;
   gap: 1rem;
 }
+
+@media (max-width: 768px) {
+  .landing-title > h1 {
+    font-size: 4rem;
+  }
+  .landing-title {
+    background-color: inherit;
+    padding: 1rem;
+    border: 0;
+    background-color: var(--yellow);
+    border: solid black 1px;
+    transform: skew(1deg, -3deg);
+    box-shadow: 7px 7px black;
+    border-radius: 7px;
+    /* margin-bottom: 2rem; */
+    z-index: 11;
+    width: 80%;
+  }
+
+  .landing-container {
+    /* background-color: var(--white); */
+    background-color: inherit;
+    border: 0;
+    transform: skew(1deg, -3deg);
+    box-shadow: none;
+    padding: 1rem;
+    /* border-radius: 7px; */
+    margin-bottom: 0;
+    z-index: 11;
+  }
+
+  img.logo {
+    width: 80%;
+    position: fixed;
+    z-index: 16;
+  }
+}

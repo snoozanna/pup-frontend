@@ -158,7 +158,34 @@ img:hover {
 }
 
 @media (max-width: 768px) {
-  body {
-    display: none;
+  main {
+    min-height: 100vh;
+    padding-top: 120px;
+    padding-bottom: 100px;
+  }
+  h1 {
+    font-size: 2rem;
+  }
+
+  h2.siteTitle {
+    position: fixed;
+    top: 2rem;
+    right: 2rem;
+    text-align: right;
+    background-color: var(--green);
+    width: fit-content;
+    padding: 1rem;
+    color: black;
+    transform: skew(1deg, -3deg);
+    box-shadow: 7px 7px black;
+  }
+
+  .funtitle {
+    background-color: var(--yellow);
+    width: fit-content;
+    padding: 1rem;
+    color: black;
+    transform: skew(1deg, -3deg);
+    box-shadow: 7px 7px black;
   }
 }

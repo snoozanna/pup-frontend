@@ -65,3 +65,25 @@
 .b3 {
   grid-area: b3;
 }
+
+@media (max-width: 768px) {
+  .note {
+    padding-top: 0.2rem;
+  }
+  .note > h3,
+  .note > p {
+    margin-bottom: 0.8rem;
+  }
+  .note > h3.subtitle {
+    font-size: 0.8rem;
+  }
+  .note > h3.eventTitle {
+    font-size: 1.4rem;
+  }
+  .note > p.info {
+    font-size: 1.2rem;
+  }
+  .pin {
+    width: 15%;
+  }
+}
