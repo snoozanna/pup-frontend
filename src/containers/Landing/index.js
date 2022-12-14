@@ -27,11 +27,11 @@ const Landing = () => {
             </p>
             <div className="options-container">
               <Link to={`/sign-up`} className="uk-link-reset">
-                <button className="raise ">Yes</button>
+                <button className="raise yellow ">Yes</button>
               </Link>
 
               <Link to={`/home`} className="uk-link-reset">
-                <button className="raise "> Maybe later</button>
+                <button className="raise yellow "> Maybe later</button>
               </Link>
             </div>
           </div>

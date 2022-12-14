@@ -82,6 +82,12 @@ h2.siteTitle {
   top: 2rem;
   right: 2rem;
   text-align: right;
+  background-color: var(--green);
+  width: fit-content;
+  padding: 1rem;
+  color: black;
+  transform: skew(1deg, -3deg);
+  box-shadow: 7px 7px black;
 }
 
 h2.siteTitle > span {
@@ -168,16 +174,7 @@ img:hover {
   }
 
   h2.siteTitle {
-    position: fixed;
-    top: 2rem;
-    right: 2rem;
-    text-align: right;
-    background-color: var(--green);
-    width: fit-content;
     padding: 1rem;
-    color: black;
-    transform: skew(1deg, -3deg);
-    box-shadow: 7px 7px black;
   }
 
   .funtitle {

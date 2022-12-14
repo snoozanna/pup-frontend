@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import { useParams } from "react-router";
 import Query from "./../../components/Query/index.js";
 import ReactMarkdown from "react-markdown";
@@ -29,10 +30,12 @@ const Piece = () => {
 
           return (
             <main className="piece-wrapper">
-              <h2 className="siteTitle">
-                <span>The</span> <span>Pop Up</span>
-                <span>Playhouse</span>
-              </h2>
+              <Link to={`/`} className>
+                <h2 className="siteTitle">
+                  <span>The</span> <span>Pop Up</span>
+                  <span>Playhouse</span>
+                </h2>
+              </Link>
               <img
                 className="pieceImg"
                 src={imageUrl}

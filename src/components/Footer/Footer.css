@@ -10,10 +10,12 @@ footer > nav {
   left: 0;
   width: 100%;
   z-index: 13;
-  padding: 1rem;
-  font-size: 1.3rem;
-  font-weight: 900;
-  background-color: var(--purple);
+  padding: 1rem 2rem;
+  font-size: 1.2rem;
+  /* font-weight: 600; */
+  background-color: var(--pink);
+
+  color: black;
 }
 
 ul.footerWrapper {
