@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import "./SignUp.css";
+import "./OpenSesameForm.css";
 import { useForm } from "react-hook-form";
 
 const SignUp = () => {
@@ -12,8 +12,10 @@ const SignUp = () => {
 
   return (
     <main className="landing">
-      <h1 className="funtitle">Stay in touch - TBC</h1>
-      <Link to={`/`} className>
+      <h1 className="funtitle">Open Sesame</h1>
+      <h2>Tell us your address </h2>
+      <h2>placeholder form - needs improving </h2>
+      <Link to={`/`}>
         <div className="siteTitleWrapper">
           <h2 className="siteTitle">
             <span>The</span> <span>Pop Up</span>
@@ -25,6 +27,18 @@ const SignUp = () => {
         </div>
       </Link>
       {/* "handleSubmit" will validate your inputs before invoking "onSubmit" */}
+      <div className="buttonWrapper">
+        <a
+          href="https://www.paypal.com/donate/?business=EU8572VTBBBP4&no_recurring=0&item_name=This+is+a+donation+for+X+game&currency_code=GBP"
+          target="_blank"
+          rel="noreferrer"
+          className="buttonItem"
+        >
+          <button className="funButton donate">
+            Need to pay ? Click here{" "}
+          </button>
+        </a>
+      </div>
       <form onSubmit={handleSubmit(onSubmit)}>
         <span>Name</span>
         <input
@@ -40,7 +54,15 @@ const SignUp = () => {
           aria-invalid={errors.mail ? "true" : "false"}
         />
         {errors.mail && <p role="alert">{errors.mail?.message}</p>}
-
+        <span>Address</span>
+        <input
+          {...register("address", { required: "Address is required" })}
+          aria-invalid={errors.address ? "true" : "false"}
+        />
+        {errors.mail && <p role="alert">{errors.mail?.message}</p>}
+        <span>I have paid</span>
+        <input type="checkbox" {...register("paid")}></input>
+        <p>PS. If paying isn't possible for you please email ....</p>
         <input type="submit" />
       </form>
     </main>

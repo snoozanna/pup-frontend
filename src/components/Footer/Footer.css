@@ -21,10 +21,17 @@ footer > nav {
 ul.footerWrapper {
   flex-wrap: nowrap;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   width: 100%;
   margin-bottom: 0;
+}
+
+.footerItem {
+  display: flex;
+}
+.footerItem > li {
+  margin-inline-end: 2rem;
 }
 
 .footerItem:last-child {
@@ -32,4 +39,19 @@ ul.footerWrapper {
 }
 
 @media (max-width: 768px) {
+  ul.footerWrapper {
+    flex-wrap: nowrap;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 0;
+  }
+  .footerItem {
+    flex-direction: column;
+  }
+
+  .footerItem:last-child > li {
+    margin-inline-end: 0;
+  }
 }

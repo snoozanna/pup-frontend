@@ -18,10 +18,15 @@ const WhatsOn = () => {
               <h1 className="funtitle">Whats on</h1>
               <h2 className="tagline">in the Coney Zoom bar</h2>
               <Link to={`/`} className>
-                <h2 className="siteTitle">
-                  <span>The</span> <span>Pop Up</span>
-                  <span>Playhouse</span>
-                </h2>
+                <div className="siteTitleWrapper">
+                  <h2 className="siteTitle">
+                    <span>The</span> <span>Pop Up</span>
+                    <span>Playhouse</span>
+                  </h2>
+                  <p className="siteCredit">
+                    by <span className="coney">Coney</span>
+                  </p>
+                </div>
               </Link>
               <ReactMarkdown
                 children={zoombar.attributes.content}

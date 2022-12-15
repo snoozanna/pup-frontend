@@ -11,11 +11,16 @@ const PiecesList = () => {
       {/* <GameNav /> */}
 
       <h1 className="funtitle">Pieces to play</h1>
-      <Link to={`/`} className>
-        <h2 className="siteTitle">
-          <span>The</span> <span>Pop Up</span>
-          <span>Playhouse</span>
-        </h2>
+      <Link to={`/`}>
+        <div className="siteTitleWrapper">
+          <h2 className="siteTitle">
+            <span>The</span> <span>Pop Up</span>
+            <span>Playhouse</span>
+          </h2>
+          <p className="siteCredit">
+            by <span className="coney">Coney</span>
+          </p>
+        </div>
       </Link>
       <Query query={PIECES_QUERY}>
         {({ data: { pieces } }) => {

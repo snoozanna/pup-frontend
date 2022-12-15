@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import "./GameCard.css";
 
-const Card = ({ piece }) => {
+const GameCard = ({ piece }) => {
   const imageUrl =
     // process.env.NODE_ENV !== "development"
     //   ? "http://localhost:1337" + piece.attributes.image.data.attributes.url
@@ -26,8 +26,8 @@ const Card = ({ piece }) => {
           />
         </div>
         <div className="pieceInfoWrapper">
-          <h3 className="">{piece.attributes.title}</h3>
-          <p className="">{piece.attributes.oneline}</p>
+          <h3>{piece.attributes.title}</h3>
+          <p>{piece.attributes.oneline}</p>
         </div>
         <div className="tags-wrapper">
           {tags.map((tag) => {
@@ -39,4 +39,4 @@ const Card = ({ piece }) => {
   );
 };
 
-export default Card;
+export default GameCard;

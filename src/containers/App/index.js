@@ -5,6 +5,7 @@ import Landing from "./../Landing/index.js";
 import Home from "./../Home/index.js";
 import NotFound from "./../404/index.js";
 import SignUp from "./../SignUp/index.js";
+import OpenSesameForm from "./../OpenSesameForm/index.js";
 import Piece from "../Piece/index.js";
 import PiecesList from "../Pieces/index.js";
 import Tag from "../Tags/index.js";
@@ -21,6 +22,7 @@ function App() {
         <Route path="/pieces-list" element={<PiecesList />} exact />
         <Route path="/pieces" element={<PiecesList />} exact />
         <Route path="/whats-on" element={<WhatsOn />} exact />
+        <Route path="/os-form" element={<OpenSesameForm />} exact />
         <Route path="/sign-up" element={<SignUp />} exact />
         <Route path="/piece/:slug" element={<Piece />} exact />
         <Route path="/tag/:slug" element={<Tag />} exact />

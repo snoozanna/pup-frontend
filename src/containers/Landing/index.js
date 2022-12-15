@@ -8,7 +8,7 @@ const Landing = () => {
       <img
         src={logo}
         alt="a black handdrawn box with the words You Have Found Coney inside, to the right is a purple 29p stamp"
-        class="logo"
+        className="logo"
       />
       <section className="landing">
         <div className="yellow shape spinning"></div>

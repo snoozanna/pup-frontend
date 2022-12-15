@@ -30,7 +30,7 @@ h1 > span {
 .corkboard {
   background-image: url("./../../assets/corkboard.jpg");
   background-size: cover;
-  max-width: 1080px;
+  max-width: 900px;
   height: 80%;
   border: 4px solid white;
   box-shadow: 7px 7px black;
@@ -142,6 +142,9 @@ h1 > span {
 }
 
 @media (max-width: 768px) {
+  main.home {
+    padding-top: 120px;
+  }
   main.home > h1.funtitle {
     margin-bottom: 4rem;
     max-width: 50%;

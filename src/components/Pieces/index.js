@@ -10,6 +10,7 @@ const Pieces = ({ pieces }) => {
   return (
     <div className="pieces-container">
       {pieces.map((piece) => {
+        //  TODO THIS KEY NOT WORKING
         return (
           <GameCard piece={piece} key={`piece__${piece.attributes.slug}`} />
         );

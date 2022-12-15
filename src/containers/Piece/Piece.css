@@ -24,6 +24,10 @@ main.piece-wrapper {
   font-size: 7rem;
 }
 
+.title-wrapper {
+  grid-area: a;
+}
+
 h3.pieceTitle {
   font-size: 3rem;
   /* display: inline; */
@@ -70,6 +74,17 @@ button.funButton.ready {
 button.funButton.ready.orange {
   background-color: var(--orange);
   font-family: var(--font-headings);
+}
+
+/* OPEN SESAME */
+.postageWrapper,
+.addressWrapper {
+  display: flex;
+}
+
+.postageWrapper > p,
+.addressWrapper > p {
+  margin-inline-end: 1rem;
 }
 
 @media (max-width: 768px) {
