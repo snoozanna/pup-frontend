@@ -1,14 +1,15 @@
 import { Link } from "react-router-dom";
 import "./OpenSesameForm.css";
-import { useForm } from "react-hook-form";
+// import { useForm } from "react-hook-form";
+import ContactForm from "./../../components/ContactForm/index.js";
 
 const SignUp = () => {
-  const {
-    register,
-    formState: { errors },
-    handleSubmit,
-  } = useForm();
-  const onSubmit = (data) => console.log(data);
+  // const {
+  //   register,
+  //   formState: { errors },
+  //   handleSubmit,
+  // } = useForm();
+  // const onSubmit = (data) => console.log(data);
 
   return (
     <main className="landing">
@@ -39,7 +40,9 @@ const SignUp = () => {
           </button>
         </a>
       </div>
-      <form onSubmit={handleSubmit(onSubmit)}>
+
+      <ContactForm />
+      {/* <form onSubmit={handleSubmit(onSubmit)}>
         <span>Name</span>
         <input
           {...register("firstName", { required: true })}
@@ -64,7 +67,7 @@ const SignUp = () => {
         <input type="checkbox" {...register("paid")}></input>
         <p>PS. If paying isn't possible for you please email ....</p>
         <input type="submit" />
-      </form>
+      </form> */}
     </main>
   );
 };
