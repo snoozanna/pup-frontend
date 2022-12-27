@@ -139,18 +139,7 @@ const Piece = () => {
               )}
               <input type="submit" />
             </form>
-            <p>PWYW donation to receive an envelope in the post.</p>
-            <a href="/suzanna/os-form">Test</a>
-            <div className="buttonWrapper">
-              <a
-                href="https://www.paypal.com/donate/?business=EU8572VTBBBP4&no_recurring=0&item_name=This+is+a+donation+for+X+game&currency_code=GBP"
-                target="_blank"
-                rel="noreferrer"
-                className="buttonItem"
-              >
-                <button className="funButton donate">Donate</button>
-              </a>
-            </div>
+
             <a
               href="http://www.unregisteredsite.net/unmarkedentrance/"
               target="_blank"
