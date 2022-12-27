@@ -5,7 +5,7 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
 import { Link } from "react-router-dom";
 import { useParams } from "react-router";
-import Query from "./../../components/Query/index.js";
+// import Query from "./../../components/Query/index.js";
 import ReactMarkdown from "react-markdown";
 // import Moment from "react-moment";
 import rehypeRaw from "rehype-raw";
@@ -13,6 +13,7 @@ import rabbit from "./../../assets/rabbit.png";
 import PIECE_QUERY from "./../../queries/piece/index.js";
 
 import "./Piece.css";
+import Loader from "../../components/Loader/index.js";
 
 // const schema = yup
 //   .object()
@@ -30,7 +31,7 @@ const Piece = () => {
   const { loading, error, data } = useQuery(PIECE_QUERY, {
     variables: { slug },
   });
-  console.log("prompt", phrasePrompt);
+
   //  TRYING TO SEE IF THERE IS A PASSCODE REQUIRED, SAVING IF SO
   useEffect(() => {
     if (data) {
@@ -43,7 +44,6 @@ const Piece = () => {
       if (data.pieces.data[0].attributes.passphrase[0]) {
         const { phrase, phraseprompt } =
           data.pieces.data[0].attributes.passphrase[0];
-        console.log("this one has a passphrase");
         setAccessViaPW(true);
         setPassphrase(phrase);
         setPhrasePrompt(phraseprompt);
@@ -61,7 +61,7 @@ const Piece = () => {
   } = useForm();
   const onError = (errors, e) => console.log(errors, e);
 
-  if (loading) return <p>Loading...</p>;
+  if (loading) return <Loader />;
   if (error) return <p>Error : {error.message}</p>;
 
   // TODO check this deconstruction - doesn't work in the return code
@@ -137,7 +137,7 @@ const Piece = () => {
                   <span>You need the passphrase to play</span>
                 </>
               )}
-              <input type="submit" />
+              <input type="submit" className="funButton" />
             </form>
 
             <a
