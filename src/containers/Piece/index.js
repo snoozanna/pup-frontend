@@ -1,4 +1,5 @@
 import { useState, useEffect, useCallback } from "react";
+import { useQuery } from "@apollo/client";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
@@ -22,19 +23,35 @@ import "./Piece.css";
 
 const Piece = () => {
   let { slug } = useParams();
-  const [open, setOpen] = useState(false);
-  const [reveal, setReveal] = useState(null);
-
-  // INSTRUCTION
-
-  //  REVEAL
-
+  const [reveal, setReveal] = useState(false);
+  const [accessViaPW, setAccessViaPW] = useState(false);
+  const [passphrase, setPassphrase] = useState(null);
+  const [phrasePrompt, setPhrasePrompt] = useState(null);
+  const { loading, error, data } = useQuery(PIECE_QUERY, {
+    variables: { slug },
+  });
+  console.log("prompt", phrasePrompt);
+  //  TRYING TO SEE IF THERE IS A PASSCODE REQUIRED, SAVING IF SO
   useEffect(() => {
-    setOpen(false);
-  }, []);
+    if (data) {
+      setReveal(false);
+      console.log(
+        "trying to read the",
+        // data.pieces.data[0].attributes.passphrase[0].phrase,
+        data,
+      );
+      if (data.pieces.data[0].attributes.passphrase[0]) {
+        const { phrase, phraseprompt } =
+          data.pieces.data[0].attributes.passphrase[0];
+        console.log("this one has a passphrase");
+        setAccessViaPW(true);
+        setPassphrase(phrase);
+        setPhrasePrompt(phraseprompt);
+      }
+    }
+  }, [data]);
 
   // FORM
-
   const {
     register,
     handleSubmit,
@@ -42,171 +59,141 @@ const Piece = () => {
     formState: { errors },
     // } = useForm({ resolver: yupResolver(schema) });
   } = useForm();
+  const onError = (errors, e) => console.log(errors, e);
 
-  const onSubmit = (data) => {
-    console.log(data);
-    const attempt = data.password.toUpperCase();
-    if (attempt === "PALM TREE") {
+  if (loading) return <p>Loading...</p>;
+  if (error) return <p>Error : {error.message}</p>;
+
+  // TODO check this deconstruction - doesn't work in the return code
+  // if (data.pieces.data.length) {
+  //   const { title, credits, fullDescription, playtime, image, instructions, players } =
+  //     data.pieces.data[0].attributes;
+  // } else {
+  //   console.log("problem fetching data")
+  // }
+
+  // FORM
+
+  const onSubmit = (inputData, event) => {
+    event.preventDefault();
+    console.log(inputData, event);
+    const attempt = inputData.passphrase;
+    if (attempt === passphrase) {
+      setAccessViaPW(false);
       setReveal(true);
-      console.log("attempt");
+      console.log("attempt sucessful");
+      console.log("accessViaPW", accessViaPW, "reveal", reveal);
     } else {
-      console.log("wrong");
+      console.log("attempt  not sucessful");
       return <p>wrong</p>;
     }
   };
+  // }
+
+  const imageUrl = data.pieces.data[0].attributes.image.data.attributes.url;
   return (
-    <Query query={PIECE_QUERY} slug={slug}>
-      {({ data: { pieces } }) => {
-        if (pieces.data.length) {
-          const imageUrl =
-            // process.env.NODE_ENV !== "development"
-            //   ? "http://localhost:1337/" +
-            //     articles.data[0].attributes.image.data.attributes.url
-            //   : // : process.env.REACT_APP_BACKEND_URL +
-            pieces.data[0].attributes.image.data.attributes.url;
-          // console.log("articles", articles.data[0].attributes.content);
+    <main className="piece-wrapper">
+      <Link to={`/`}>
+        <div className="siteTitleWrapper">
+          <h2 className="siteTitle">
+            <span>The</span> <span>Pop Up</span>
+            <span>Playhouse</span>
+          </h2>
+          <p className="siteCredit">
+            by <span className="coney">Coney</span>
+          </p>
+        </div>
+      </Link>
+      <img
+        className="pieceImg"
+        src={imageUrl}
+        alt={data.pieces.data[0].attributes.image.data.attributes.url}
+      />
+      <div className="title-wrapper">
+        <h1>{data.pieces.data[0].attributes.title}</h1>
+        <p>{data.pieces.data[0].attributes.credits}</p>
 
-          return (
-            <main className="piece-wrapper">
-              <Link to={`/`}>
-                <div className="siteTitleWrapper">
-                  <h2 className="siteTitle">
-                    <span>The</span> <span>Pop Up</span>
-                    <span>Playhouse</span>
-                  </h2>
-                  <p className="siteCredit">
-                    by <span className="coney">Coney</span>
-                  </p>
-                </div>
-              </Link>
-              <img
-                className="pieceImg"
-                src={imageUrl}
-                alt={pieces.data[0].attributes.image.data.attributes.url}
-              />
-              <div className="title-wrapper">
-                <h1>{pieces.data[0].attributes.title}</h1>
-                <p>{pieces.data[0].attributes.credits}</p>
-
+        <ReactMarkdown
+          children={data.pieces.data[0].attributes.fullDescription}
+          rehypePlugins={[rehypeRaw]}
+        ></ReactMarkdown>
+      </div>
+      <div className="keyInfo">
+        <h3 className="pieceTitle">Playtime</h3>
+        <p>{data.pieces.data[0].attributes.playtime}</p>
+        <h3 className="pieceTitle">Instructions</h3>
+        <p>{data.pieces.data[0].attributes.instructions}</p>
+        <h3 className="pieceTitle">Players</h3>
+        <p>{data.pieces.data[0].attributes.players}</p>
+      </div>
+      <div className="description">
+        {accessViaPW ? (
+          <>
+            <p>{phrasePrompt}</p>
+            <form onSubmit={handleSubmit(onSubmit, onError)}>
+              <input {...register("passphrase", { required: true })} />
+              {errors.passphrase && (
+                <>
+                  <span>You need the passphrase to play</span>
+                </>
+              )}
+              <input type="submit" />
+            </form>
+            <p>PWYW donation to receive an envelope in the post.</p>
+            <a href="/suzanna/os-form">Test</a>
+            <div className="buttonWrapper">
+              <a
+                href="https://www.paypal.com/donate/?business=EU8572VTBBBP4&no_recurring=0&item_name=This+is+a+donation+for+X+game&currency_code=GBP"
+                target="_blank"
+                rel="noreferrer"
+                className="buttonItem"
+              >
+                <button className="funButton donate">Donate</button>
+              </a>
+            </div>
+            <a
+              href="http://www.unregisteredsite.net/unmarkedentrance/"
+              target="_blank"
+              rel="noreferrer"
+              className="rabbit"
+            >
+              <img src={rabbit} alt="rabbit" />
+            </a>
+          </>
+        ) : (
+          <>
+            {reveal ? (
+              <>
                 <ReactMarkdown
-                  children={pieces.data[0].attributes.fullDescription}
+                  children={data.pieces.data[0].attributes.revealText}
+                  // children={pmarkdown}
                   rehypePlugins={[rehypeRaw]}
                 ></ReactMarkdown>
-              </div>
-              <div className="keyInfo">
-                <h3 className="pieceTitle">Playtime</h3>
-                <p>{pieces.data[0].attributes.playtime}</p>
-                <h3 className="pieceTitle">Instructions</h3>
-                <p>{pieces.data[0].attributes.instructions}</p>
-                <h3 className="pieceTitle">Players</h3>
-                <p>{pieces.data[0].attributes.players}</p>
-              </div>
-              <div className="description">
-                {open ? (
-                  <>
-                    {/* <ReactMarkdown
-                      children={pieces.data[0].attributes.revealText}
-                      rehypePlugins={[rehypeRaw]}
-                    ></ReactMarkdown> */}
-                    <h3 className="howtoplay">How to play</h3>
-                    {reveal ? (
-                      <>
-                        <p>Well done! You entered the correct password.</p>
-                        <p>
-                          We need to send a small envelope to your postal
-                          address.
-                        </p>
-                        <div className="postageWrapper">
-                          <p> Please click below to pay for your postage</p>
-                          <div className="buttonWrapper">
-                            <a
-                              href="https://www.paypal.com/donate/?business=EU8572VTBBBP4&no_recurring=0&item_name=This+is+a+donation+for+X+game&currency_code=GBP"
-                              target="_blank"
-                              rel="noreferrer"
-                              className="buttonItem"
-                            >
-                              <button className="funButton donate">
-                                Donate{" "}
-                              </button>
-                            </a>
-                          </div>
-                        </div>
-                        <div className="addressWrapper">
-                          <p> And then tell us your address</p>
-
-                          <Link to={`/os-form`} className="uk-link-reset">
-                            <div className="buttonWrapper">
-                              <button className="funButton ">Tell us </button>
-                            </div>
-                          </Link>
-                        </div>
-                      </>
-                    ) : (
-                      <>
-                        <p>
-                          {" "}
-                          To play, you need a keyword, which you can find by
-                          falling down a rabbithole.
-                        </p>
-                        <form onSubmit={handleSubmit(onSubmit)}>
-                          {/* include validation with required or other standard HTML validation rules */}
-                          <input
-                            {...register("password", { required: true })}
-                          />
-                          {/* errors will return when field validation fails  */}
-                          {errors.password && (
-                            <>
-                              <span>You need the password to play</span>
-                            </>
-                          )}
-
-                          <input type="submit" />
-                        </form>
-                        <p>
-                          {" "}
-                          PWYW donation to receive an envelope in the post.
-                        </p>
-                        <div className="buttonWrapper">
-                          <a
-                            href="https://www.paypal.com/donate/?business=EU8572VTBBBP4&no_recurring=0&item_name=This+is+a+donation+for+X+game&currency_code=GBP"
-                            target="_blank"
-                            rel="noreferrer"
-                            className="buttonItem"
-                          >
-                            <button className="funButton donate">
-                              Donate{" "}
-                            </button>
-                          </a>
-                        </div>
-                        <a
-                          href="http://www.unregisteredsite.net/unmarkedentrance/"
-                          target="_blank"
-                          rel="noreferrer"
-                          className="rabbit"
-                        >
-                          <img src={rabbit} alt="rabbit" />
-                        </a>
-                      </>
-                    )}
-                  </>
-                ) : (
-                  <>
-                    <button
-                      onClick={() => setOpen(!open)}
-                      className="funButton"
-                    >
-                      I'd like to try!
-                    </button>
-                    <div></div>
-                  </>
-                )}
-              </div>
-            </main>
-          );
-        }
-      }}
-    </Query>
+              </>
+            ) : (
+              <>
+                <button
+                  onClick={() => setReveal(!reveal)}
+                  className="funButton"
+                >
+                  I'd like to try!
+                </button>
+              </>
+            )}
+          </>
+        )}
+      </div>
+    </main>
   );
 };
 
+// </Query>
+
 export default Piece;
+
+// if access PW = true,
+// show form (dynamtic passphrase),
+// else show "I'd like to try"
+
+// If PW is successful, or "Id like to try button has been clicked"
+// show reveal text

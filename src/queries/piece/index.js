@@ -29,6 +29,13 @@ const PIECE_QUERY = gql`
               }
             }
           }
+          passphrase {
+            __typename
+            ... on ComponentPassphrasePassphrase {
+              phrase
+              phraseprompt
+            }
+          }
         }
       }
     }
