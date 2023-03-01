@@ -31,6 +31,7 @@ const Home = () => {
                 </div>
               </Link>
             </header>
+            <SpinMenu />
             <main className="home">
               <h1 className="funtitle">Coney Notice Board</h1>
               <section className="corkboard-wrapper">
@@ -80,6 +81,7 @@ const Home = () => {
                         );
                     }
                   })}
+
                   <a
                     href="http://www.unregisteredsite.net/unmarkedentrance/"
                     target="_blank"

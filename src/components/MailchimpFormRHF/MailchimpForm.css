@@ -1,0 +1,38 @@
+form.mailchimp {
+  border: solid white 1px;
+  padding: 2rem;
+  border-radius: 5px;
+}
+
+form.mailchimp > .formItem > input {
+  margin-block-end: 1rem;
+}
+
+form.mailchimp > .formItem {
+  margin-block-end: 2rem;
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+}
+
+form.mailchimp > button {
+  width: fit-content;
+  margin: auto;
+  padding: 0.6rem;
+  background-color: var(--green);
+  color: black;
+}
+
+.helperText {
+  background-color: darkmagenta;
+  color: #fff;
+  width: fit-content;
+  padding: 0.6rem;
+  text-align: center;
+  margin: auto;
+  font-size: 1.2rem;
+}
+
+.helperText > p {
+  margin-block-end: 0;
+}

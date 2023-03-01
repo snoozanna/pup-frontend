@@ -3,20 +3,20 @@
 @import url("https://fonts.googleapis.com/css2?family=Comfortaa:wght@700&display=swap");
 
 :root {
-  --green: #2bcdb5;
+  /* --green: #2bcdb5;
   --purple: #7736db;
   --yellow: #ffc548;
   --orange: #ff6d48;
   --pink: #fa7f98;
   --blue: #009ef4;
-  --white: #f9f8f5;
-  /* --green: #2bcdb5;
+  --white: #f9f8f5; */
+  --green: #2bcdb5;
   --purple: #583095;
   --yellow: #e1d6bd;
   --orange: #d67b64;
   --pink: #cca2aa;
   --blue: #53addd;
-  --white: #f9f8f5; */
+  --white: #f9f8f5;
   --font-headings: "Bungee Shade", sans-serif;
   --font-headings: "Silkscreen", sans-serif;
   --font-headings: "Comfortaa", sans-serif;
