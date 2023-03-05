@@ -10,7 +10,7 @@ import Piece from "../Piece/index.js";
 import PiecesList from "../Pieces/index.js";
 import Tag from "../Tags/index.js";
 import WhatsOn from "../WhatsOn/index.js";
-import Footer from "../../components/Footer";
+import Footer from "../Footer";
 
 function App() {
   return (
@@ -28,7 +28,8 @@ function App() {
         <Route path="/tag/:slug" element={<Tag />} exact />
         <Route path="*" element={<NotFound />} />
       </Routes>
-      <Footer />
+      {/* <Footer /> */}
+      {/* {window.location.pathname !== "/" ? <Footer /> : null} */}
     </div>
   );
 }

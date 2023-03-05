@@ -14,6 +14,8 @@ import PIECE_QUERY from "./../../queries/piece/index.js";
 
 import "./Piece.css";
 import Loader from "../../components/Loader/index.js";
+import Header from "../Header";
+import Footer from "../Footer";
 
 // const schema = yup
 //   .object()
@@ -92,87 +94,91 @@ const Piece = () => {
 
   const imageUrl = data.pieces.data[0].attributes.image.data.attributes.url;
   return (
-    <main className="piece-wrapper">
-      <Link to={`/`}>
-        <div className="siteTitleWrapper">
-          <h2 className="siteTitle">
-            <span>The</span> <span>Pop Up</span>
-            <span>Playhouse</span>
-          </h2>
-          <p className="siteCredit">
-            by <span className="coney">Coney</span>
-          </p>
-        </div>
-      </Link>
-      <img
-        className="pieceImg"
-        src={imageUrl}
-        alt={data.pieces.data[0].attributes.image.data.attributes.url}
-      />
-      <div className="title-wrapper">
-        <h1>{data.pieces.data[0].attributes.title}</h1>
-        <p>{data.pieces.data[0].attributes.credits}</p>
+    <>
+      <Header />
+      <main className="piece-wrapper">
+        <Link to={`/`}>
+          <div className="siteTitleWrapper">
+            <h2 className="siteTitle">
+              <span>The</span> <span>Pop Up</span>
+              <span>Playhouse</span>
+            </h2>
+            <p className="siteCredit">
+              by <span className="coney">Coney</span>
+            </p>
+          </div>
+        </Link>
+        <img
+          className="pieceImg"
+          src={imageUrl}
+          alt={data.pieces.data[0].attributes.image.data.attributes.url}
+        />
+        <div className="title-wrapper">
+          <h1>{data.pieces.data[0].attributes.title}</h1>
+          <p>{data.pieces.data[0].attributes.credits}</p>
 
-        <ReactMarkdown
-          children={data.pieces.data[0].attributes.fullDescription}
-          rehypePlugins={[rehypeRaw]}
-        ></ReactMarkdown>
-      </div>
-      <div className="keyInfo">
-        <h3 className="pieceTitle">Playtime</h3>
-        <p>{data.pieces.data[0].attributes.playtime}</p>
-        <h3 className="pieceTitle">Instructions</h3>
-        <p>{data.pieces.data[0].attributes.instructions}</p>
-        <h3 className="pieceTitle">Players</h3>
-        <p>{data.pieces.data[0].attributes.players}</p>
-      </div>
-      <div className="description">
-        {accessViaPW ? (
-          <>
-            <p>{phrasePrompt}</p>
-            <form onSubmit={handleSubmit(onSubmit, onError)}>
-              <input {...register("passphrase", { required: true })} />
-              {errors.passphrase && (
+          <ReactMarkdown
+            children={data.pieces.data[0].attributes.fullDescription}
+            rehypePlugins={[rehypeRaw]}
+          ></ReactMarkdown>
+        </div>
+        <div className="keyInfo">
+          <h3 className="pieceTitle">Playtime</h3>
+          <p>{data.pieces.data[0].attributes.playtime}</p>
+          <h3 className="pieceTitle">Instructions</h3>
+          <p>{data.pieces.data[0].attributes.instructions}</p>
+          <h3 className="pieceTitle">Players</h3>
+          <p>{data.pieces.data[0].attributes.players}</p>
+        </div>
+        <div className="description">
+          {accessViaPW ? (
+            <>
+              <p>{phrasePrompt}</p>
+              <form onSubmit={handleSubmit(onSubmit, onError)}>
+                <input {...register("passphrase", { required: true })} />
+                {errors.passphrase && (
+                  <>
+                    <span>You need the passphrase to play</span>
+                  </>
+                )}
+                <input type="submit" className="funButton" />
+              </form>
+
+              <a
+                href="http://www.unregisteredsite.net/unmarkedentrance/"
+                target="_blank"
+                rel="noreferrer"
+                className="rabbit"
+              >
+                <img src={rabbit} alt="rabbit" />
+              </a>
+            </>
+          ) : (
+            <>
+              {reveal ? (
                 <>
-                  <span>You need the passphrase to play</span>
+                  <ReactMarkdown
+                    children={data.pieces.data[0].attributes.revealText}
+                    // children={pmarkdown}
+                    rehypePlugins={[rehypeRaw]}
+                  ></ReactMarkdown>
+                </>
+              ) : (
+                <>
+                  <button
+                    onClick={() => setReveal(!reveal)}
+                    className="funButton"
+                  >
+                    I'd like to try!
+                  </button>
                 </>
               )}
-              <input type="submit" className="funButton" />
-            </form>
-
-            <a
-              href="http://www.unregisteredsite.net/unmarkedentrance/"
-              target="_blank"
-              rel="noreferrer"
-              className="rabbit"
-            >
-              <img src={rabbit} alt="rabbit" />
-            </a>
-          </>
-        ) : (
-          <>
-            {reveal ? (
-              <>
-                <ReactMarkdown
-                  children={data.pieces.data[0].attributes.revealText}
-                  // children={pmarkdown}
-                  rehypePlugins={[rehypeRaw]}
-                ></ReactMarkdown>
-              </>
-            ) : (
-              <>
-                <button
-                  onClick={() => setReveal(!reveal)}
-                  className="funButton"
-                >
-                  I'd like to try!
-                </button>
-              </>
-            )}
-          </>
-        )}
-      </div>
-    </main>
+            </>
+          )}
+        </div>
+      </main>
+      <Footer />
+    </>
   );
 };
 

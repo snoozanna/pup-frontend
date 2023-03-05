@@ -1,4 +1,6 @@
 import { Link } from "react-router-dom";
+import Header from "../Header";
+import Footer from "../Footer";
 import MailchimpSubscribe from "react-mailchimp-subscribe";
 import MailChimpForm from "../../components/MailchimpForm/MailchimpForm";
 import MailchimpFormRHF from "../../components/MailchimpFormRHF/MailchimpFormRHF.js";
@@ -10,37 +12,28 @@ const MCURL =
 
 const SignUp = () => {
   return (
-    <main className="landing">
-      <h1 className="funtitle">Stay in touch </h1>
-      <Link to={`/`} className>
-        <div className="siteTitleWrapper">
-          <h2 className="siteTitle">
-            <span>The</span> <span>Pop Up</span>
-            <span>Playhouse</span>
-          </h2>
-          <p className="siteCredit">
-            by <span className="coney">Coney</span>
-          </p>
-        </div>
-      </Link>
-
-      {/* <SimpleForm url={MCURL} /> */}
-      <MailchimpSubscribe
-        url={MCURL}
-        render={({ subscribe, status, message }) => (
-          <div>
-            <MailchimpFormRHF
-              status={status}
-              message={message}
-              onValidated={(formData) => {
-                subscribe(formData);
-                console.log(formData);
-              }}
-            />
-          </div>
-        )}
-      />
-    </main>
+    <>
+      <Header pageTitle={"Stay in Touch"} />
+      <main className="landing">
+        {/* <SimpleForm url={MCURL} /> */}
+        <MailchimpSubscribe
+          url={MCURL}
+          render={({ subscribe, status, message }) => (
+            <div>
+              <MailchimpFormRHF
+                status={status}
+                message={message}
+                onValidated={(formData) => {
+                  subscribe(formData);
+                  console.log(formData);
+                }}
+              />
+            </div>
+          )}
+        />
+      </main>
+      <Footer />
+    </>
   );
 };
 

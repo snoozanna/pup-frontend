@@ -1,0 +1,72 @@
+header {
+  padding: var(--padding);
+  padding-top: 4rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.siteTitleWrapper {
+  position: fixed;
+  top: 2rem;
+  right: 2rem;
+  text-align: right;
+}
+
+h2.siteTitle {
+  background-color: var(--green);
+  width: fit-content;
+  padding: 1rem;
+  color: black;
+  transform: skew(1deg, -3deg);
+  box-shadow: 7px 7px black;
+  margin-block-end: 0.5rem;
+}
+
+h2.siteTitle > span {
+  display: block;
+}
+
+.siteTitleWrapper > .siteCredit {
+  transform: skew(1deg, -3deg);
+  text-align: center;
+  margin-block-end: 0;
+}
+
+.siteTitleWrapper > .siteCredit > .coney {
+  font-family: "Courier New", Courier, monospace;
+  text-transform: uppercase;
+  font-weight: 900;
+  font-size: 2rem;
+  letter-spacing: 0.2rem;
+}
+
+.pageTitleWrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.pageTitleWrapper > .tagline {
+  margin-left: 15rem;
+}
+
+@media (max-width: 768px) {
+  header {
+    margin-top: 5rem !important;
+    justify-content: flex-start;
+  }
+
+  h2.siteTitle {
+    padding: 1rem;
+  }
+
+  .pageTitleWrapper {
+    align-items: flex-start;
+  }
+  .pageTitleWrapper > .tagline {
+    margin-left: 5rem;
+    max-width: 50%;
+  }
+}

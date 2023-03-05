@@ -1,17 +1,20 @@
 .pickRandom.circle {
-  min-width: 200px;
-  width: fit-content;
-  min-height: 200px;
-  height: fit-content;
+  background-image: url("./../../assets/wheel.png");
+  background-position: center;
+  width: 350px;
+  height: 350px;
   border-radius: 50%;
-  z-index: 10;
+  z-index: 11;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  box-shadow: 7px 7px black;
+  /* box-shadow: 7px 7px black; */
   margin: auto;
   padding: 1rem;
+  position: fixed;
+  bottom: -20%;
+  left: -8%;
 }
 
 .pickRandom.circle:hover {
@@ -24,14 +27,30 @@
   margin-bottom: 0;
 }
 
+.randomTitleWrapper {
+  /* position: fixed; */
+  text-align: left;
+  display: flex;
+  justify-content: end;
+  width: 100%;
+}
+
+.randomTitleWrapper > h2,
+.randomTitleWrapper > a > h2 {
+  max-width: 30%;
+}
+
 .randomTitle-wrapper > h3.randomTitle {
   font-size: 2rem;
   color: black;
   padding: 1rem;
   margin-bottom: 0;
+  text-align: center;
+  margin: auto;
+  width: 50%;
 }
 
-.circle.green {
+/* .circle.green {
   background-color: var(--green);
 }
 
@@ -45,4 +64,22 @@
 
 .circle.blue {
   background-color: var(--blue);
+} */
+
+img.wheel {
+  max-width: 300px;
+}
+
+@media (max-width: 768px) {
+  .pickRandom.circle {
+    width: 50vw;
+    height: 50vw;
+    bottom: -8%;
+    left: -8%;
+  }
+
+  .randomTitleWrapper > h2,
+  .randomTitleWrapper > a > h2 {
+    max-width: 60%;
+  }
 }
