@@ -1,5 +1,5 @@
 import React from "react";
-import loader from "./../../assets/loader.png";
+import loader from "./../../assets/wheel.png";
 import "./Loader.css";
 
 const Loader = () => {

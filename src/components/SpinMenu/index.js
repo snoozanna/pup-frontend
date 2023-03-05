@@ -56,24 +56,39 @@ const SpinMenu = () => {
           };
           return (
             <>
-              <animated.div
-                className={`pickRandom circle ${color}`}
-                onClick={handleClick}
-                style={{ ...springs }}
-              >
+              <div class="spinMenuWrapper">
+                <animated.div
+                  className={`pickRandom circle ${color}`}
+                  onClick={handleClick}
+                  style={{ ...springs }}
+                >
+                  {/* <div class="randomTitleWrapper">
+                    {random ? (
+                      <Link
+                        to={`/piece/${random.attributes.slug}`}
+                        className="uk-link-reset"
+                      >
+                        <h2 className="pick">{random.attributes.title}</h2>
+                      </Link>
+                    ) : (
+                      <h2 className="pick">Pick a game for me</h2>
+                    )}
+                  </div> */}
+                </animated.div>
+
                 <div class="randomTitleWrapper">
                   {random ? (
                     <Link
                       to={`/piece/${random.attributes.slug}`}
                       className="uk-link-reset"
                     >
-                      <h2 className="pick">{random.attributes.title}</h2>
+                      <h2 className="pick ">{random.attributes.title}</h2>
                     </Link>
                   ) : (
                     <h2 className="pick">Pick a game for me</h2>
                   )}
                 </div>
-              </animated.div>
+              </div>
             </>
           );
         }}

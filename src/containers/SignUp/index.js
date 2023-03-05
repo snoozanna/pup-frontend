@@ -3,7 +3,7 @@ import Header from "../Header";
 import Footer from "../Footer";
 import MailchimpSubscribe from "react-mailchimp-subscribe";
 import MailChimpForm from "../../components/MailchimpForm/MailchimpForm";
-import MailchimpFormRHF from "../../components/MailchimpFormRHF/MailchimpFormRHF.js";
+import MailchimpFormRHF from "../../components/MailchimpFormRHF/index.js";
 
 import "./SignUp.css";
 
@@ -14,12 +14,20 @@ const SignUp = () => {
   return (
     <>
       <Header pageTitle={"Stay in Touch"} />
-      <main className="landing">
+      <main className="signup contentWrapper">
         {/* <SimpleForm url={MCURL} /> */}
-        <MailchimpSubscribe
-          url={MCURL}
-          render={({ subscribe, status, message }) => (
-            <div>
+
+        <div class="contentItem">
+          <h2>Sign up for our mailing list</h2>
+          <p>
+            To be kept up to date with new releases and upcoming Zoom Bar events
+          </p>
+          <p>By signing up you agree to our [Privacy Policy].</p>
+        </div>
+        <div class="contentItem">
+          <MailchimpSubscribe
+            url={MCURL}
+            render={({ subscribe, status, message }) => (
               <MailchimpFormRHF
                 status={status}
                 message={message}
@@ -28,9 +36,9 @@ const SignUp = () => {
                   console.log(formData);
                 }}
               />
-            </div>
-          )}
-        />
+            )}
+          />
+        </div>
       </main>
       <Footer />
     </>

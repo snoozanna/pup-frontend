@@ -1,7 +1,7 @@
 section.landing {
   min-height: 100vh;
   display: flex;
-  flex-direction: column;
+  /* flex-direction: column; */
   align-items: center;
   justify-content: center;
   text-align: center;
@@ -100,7 +100,25 @@ button.raise.yellow {
   background-color: var(--yellow);
 }
 
+.landing-title > .siteCredit {
+  transform: skew(1deg, -3deg);
+  text-align: center;
+  margin-block-end: 2rem;
+}
+
+.landing-title > .siteCredit > .coney {
+  font-family: "Courier New", Courier, monospace;
+  text-transform: uppercase;
+  font-weight: 900;
+  font-size: 2rem;
+  letter-spacing: 0.2rem;
+}
+
 @media (max-width: 768px) {
+  section.landing {
+    flex-direction: column;
+  }
+
   .landing-title > h1 {
     font-size: 4rem;
   }
@@ -114,6 +132,7 @@ button.raise.yellow {
     box-shadow: none;
     z-index: 11;
     width: 80%;
+    margin-bottom: 2rem;
   }
 
   .landing-container {
