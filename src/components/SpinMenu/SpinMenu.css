@@ -54,7 +54,7 @@
   text-align: left;
   display: flex;
   justify-content: start;
-  width: 100%;
+  width: 80%;
   grid-area: bb;
   z-index: 12;
 }
