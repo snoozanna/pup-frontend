@@ -1,5 +1,7 @@
 import { Link } from "react-router-dom";
 import { useEffect } from "react";
+import Header from "./../Header";
+import Footer from "./../Footer";
 import Query from "./../../components/Query/index.js";
 import NOTICES_QUERY from "../../queries/notices/notices";
 import SpinMenu from "./../../components/SpinMenu/index.js";
@@ -18,81 +20,35 @@ const Home = () => {
 
         return (
           <>
-            <header>
-              <Link to={`/`} className>
-                <div className="siteTitleWrapper">
-                  <h2 className="siteTitle">
-                    <span>The</span> <span>Pop Up</span>
-                    <span>Playhouse</span>
-                  </h2>
-                  <p className="siteCredit">
-                    by <span className="coney">Coney</span>
-                  </p>
-                </div>
-              </Link>
-            </header>
+            <Header pageTitle={""} />
             <SpinMenu />
             <main className="home">
-              <h1 className="funtitle">Coney Notice Board</h1>
-              <section className="corkboard-wrapper">
-                <div className="corkboard">
-                  {notices.map((notice) => {
-                    console.log("notice", notice);
-                    const {
-                      subtitle,
-                      eventName,
-                      date,
-                      type,
-                      caption,
-                      position,
-                      image,
-                      uid,
-                    } = notice.attributes;
+              <section className="info">
+                <div className="info-wrapper">
+                  <h2>Welcome to The Pop Up Playhouse</h2>
+                  <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Est
+                    sit iure quo, beatae possimus velit! Saepe, laudantium
+                    nesciunt. Deserunt vel distinctio molestiae rerum, doloribus
+                    exercitationem omnis ipsam saepe nesciunt animi.{" "}
+                  </p>
 
-                    switch (type) {
-                      case "postit":
-                        return (
-                          <Note
-                            subtitle={subtitle}
-                            eventTitle={eventName}
-                            date={date}
-                            position={position}
-                            key={uid}
-                          />
-                        );
-                      case "polaroid":
-                        return (
-                          <Polaroid
-                            caption={caption}
-                            image={image}
-                            position={position}
-                            key={uid}
-                          />
-                        );
-                      case "circle":
-                        return <SpinMenu />;
-                      default:
-                        return (
-                          <Note
-                            eventTitle={eventName}
-                            date={date}
-                            position={position}
-                          />
-                        );
-                    }
-                  })}
-
-                  <a
-                    href="http://www.unregisteredsite.net/unmarkedentrance/"
-                    target="_blank"
-                    rel="noreferrer"
-                    className="rabbit"
-                  >
-                    <img src={rabbit} alt="rabbit" />
-                  </a>
+                  <p>
+                    All play is presented for free, but we invite a Pay What You
+                    Can donation.
+                  </p>
                 </div>
               </section>
+              <a
+                href="http://www.unregisteredsite.net/unmarkedentrance/"
+                target="_blank"
+                rel="noreferrer"
+                className="rabbit"
+              >
+                <img src={rabbit} alt="rabbit" />
+              </a>
             </main>
+            <Footer />
           </>
         );
       }}

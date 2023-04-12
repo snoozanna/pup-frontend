@@ -4,6 +4,7 @@ import Footer from "../Footer";
 import MailchimpSubscribe from "react-mailchimp-subscribe";
 import MailChimpForm from "../../components/MailchimpForm/MailchimpForm";
 import MailchimpFormRHF from "../../components/MailchimpFormRHF/index.js";
+import DotDigitalRHF from "../../components/DotDigitalRHF/index.js";
 
 import "./SignUp.css";
 
@@ -25,7 +26,7 @@ const SignUp = () => {
           <p>By signing up you agree to our [Privacy Policy].</p>
         </div>
         <div class="contentItem">
-          <MailchimpSubscribe
+          {/* <MailchimpSubscribe
             url={MCURL}
             render={({ subscribe, status, message }) => (
               <MailchimpFormRHF
@@ -37,7 +38,8 @@ const SignUp = () => {
                 }}
               />
             )}
-          />
+          /> */}
+          <DotDigitalRHF />
         </div>
       </main>
       <Footer />

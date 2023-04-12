@@ -1,0 +1,119 @@
+import { useRef, useState } from "react";
+import { useForm } from "react-hook-form";
+import "./GiftAidForm.css";
+import emailjs from "@emailjs/browser";
+const GiftAidForm = ({ status, message, onValidated }) => {
+  //   Arrive at the form
+  // Button to next dynamically populate
+  // Or go straight to the game
+  // Gets emailed to Coney
+
+  const form = useRef();
+  const {
+    register,
+    formState: { errors },
+    handleSubmit,
+  } = useForm();
+
+  const [submitted, setSubmitted] = useState(null);
+
+  const onSubmit = () => {
+    // e.preventDefault();
+    emailjs
+      .sendForm(
+        // "YOUR_SERVICE_ID",
+        "service_m9f7j4v",
+        // "YOUR_TEMPLATE_ID",
+        "template_zfe2dhc",
+        form.current,
+        // "YOUR_PUBLIC_KEY",
+        "vBWVf7sYQ5SNXH8tb",
+      )
+      .then(
+        (result) => {
+          console.log(result.text);
+        },
+        (error) => {
+          console.log(error.text);
+        },
+      );
+    setSubmitted(true);
+    form.current.reset();
+  };
+
+  return (
+    <>
+      <div className="formWrapper">
+        <form class="contact" onSubmit={handleSubmit(onSubmit)} ref={form}>
+          <label>
+            {/* TODO allow them to change amount */}
+            <span>I want to Gift Aid my donation of [...] to Coney</span>
+            <select {...register("consentGA", { required: true })}>
+              <option value="yes">Yes</option>
+              <option value="no">No</option>
+            </select>
+          </label>
+          I am a UK taxpayer and understand that if I pay less Income Tax and/or
+          Capital Gains Tax in the current tax year than the amount of Gift Aid
+          claimed on all my donations it is my responsibility to pay any
+          difference.
+          <h3> My Details</h3>
+          <label>
+            <span>First Name</span>
+            <input
+              {...register("player_name", { required: true })}
+              aria-invalid={errors.player_name ? "true" : "false"}
+            />
+            {errors.player_name?.type === "required" && (
+              <p role="alert">Name is required</p>
+            )}
+          </label>
+          <label>
+            <span>Last Name</span>
+            <input
+              {...register("player_name", { required: true })}
+              aria-invalid={errors.player_name ? "true" : "false"}
+            />
+            {errors.player_name?.type === "required" && (
+              <p role="alert">Name is required</p>
+            )}
+          </label>
+          <label>
+            <span>Email</span>
+            <input
+              {...register("email", { required: "Email Address is required" })}
+              aria-invalid={errors.email ? "true" : "false"}
+            />
+            {errors.email && <p role="alert">{errors.email?.message}</p>}
+          </label>
+          <label>
+            <span>Address</span>
+            <textarea
+              {...register("address", { required: "Address is required" })}
+              aria-invalid={errors.address ? "true" : "false"}
+            />
+            {errors.address && <p role="alert">{errors.address?.message}</p>}
+          </label>
+          <label>
+            <span>Postcode</span>
+            <input
+              {...register("postcode", { required: "postcode is required" })}
+              aria-invalid={errors.postcode ? "true" : "false"}
+            />
+            {errors.postcode && <p role="alert">{errors.postcode?.message}</p>}
+          </label>
+          <label>
+            <span>Anything else we need to know?</span>
+            <textarea {...register("message")} />
+            {errors.mail && <p role="alert">{errors.mail?.message}</p>}
+          </label>
+          <button disabled={submitted} loading={submitted} text="Save">
+            {submitted ? "Thanks!" : "Submit"}
+          </button>
+        </form>
+      </div>
+    </>
+  );
+};
+
+export default GiftAidForm;

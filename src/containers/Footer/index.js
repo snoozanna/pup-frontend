@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
+import puzzle from "./../../assets/puzzle.png";
 
-import rabbit from "./../../assets/rabbit-icon.png";
 import send from "./../../assets/send.png";
 import calendar from "./../../assets/calendar.png";
 import "./Footer.css";
@@ -18,7 +18,7 @@ const Footer = () => {
           </li>
           <li className="navItem">
             <Link to={`/pieces`} className="linkWrapper">
-              <img src={rabbit} alt="rabbit" className="navIcon play" />
+              <img src={puzzle} alt="rabbit" className="navIcon play" />
               <span>Play</span>
             </Link>
           </li>

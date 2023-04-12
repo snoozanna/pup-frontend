@@ -1,10 +1,9 @@
 .spinMenuWrapper {
-  position: relative;
   position: fixed;
-  width: 400px;
-  height: 400px;
-  bottom: -14rem;
-  left: -8%;
+  width: 300px;
+  height: 300px;
+  bottom: -70px;
+  left: -90px;
   display: grid;
   place-items: center;
   grid-template-rows: 1fr 1fr;

@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import Pieces from "../../components/Pieces";
-import SpinMenu from "./../../components/SpinMenu";
+
 import Header from "../Header";
 import Footer from "../Footer";
 import Query from "../../components/Query";
@@ -13,9 +13,6 @@ const PiecesList = () => {
     <>
       <Header pageTitle={"Pieces to Play"} />
       <main className="pieces">
-        {/* <GameNav /> */}
-        <SpinMenu />
-
         <Query query={PIECES_QUERY}>
           {({ data: { pieces } }) => {
             return <Pieces pieces={pieces.data} />;

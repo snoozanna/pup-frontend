@@ -1,3 +1,6 @@
+main.whatson {
+  max-width: 800px;
+}
 main.whatson > h1.funtitle {
   display: inline-block;
   margin-inline-end: 2rem;

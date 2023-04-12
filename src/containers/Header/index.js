@@ -10,7 +10,7 @@ const Header = ({ pageTitle, tagline }) => {
           {pageTitle ? <h1 className="funtitle">{pageTitle}</h1> : null}
           <h2 className="tagline">{tagline}</h2>
         </div>
-        <Link to={`/`}>
+        <Link to={`/home`}>
           <div className="siteTitleWrapper">
             <h2 className="siteTitle">
               <span>The</span> <span>Pop Up</span>
