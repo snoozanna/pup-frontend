@@ -12,6 +12,7 @@
   --white: #f9f8f5; */
   --purple: #5c65b9;
   --green: #2b9595;
+  /* --green: #a6b935; */
   --yellow: #d59e20;
   --pink: #af60b0;
   --orange: #dd6a48;
@@ -45,7 +46,7 @@ main {
 }
 
 a {
-  text-decoration: none;
+  text-decoration: underline;
   color: var(--font-color) !important;
 }
 
@@ -70,6 +71,20 @@ h3 {
 
 p {
   font-size: 1.7rem;
+}
+
+main > .introCopy {
+  padding: 2rem;
+}
+
+main > .introCopy > p {
+  max-width: 800px;
+  text-align: center;
+  margin: auto;
+}
+
+.underline {
+  text-decoration: underline;
 }
 
 .funtitle {
@@ -183,6 +198,10 @@ button.raise:active {
 .funButton:active {
   box-shadow: 2px 2px black;
   transform: translateY(4px);
+}
+
+.funButton:hover {
+  cursor: pointer;
 }
 
 button.green {

@@ -2,6 +2,13 @@
   display: flex;
   flex-direction: column;
 }
+
+.formWrapper > form.mailchimp > p.disclaimer {
+  font-size: 1.4rem;
+  color: black;
+  text-align: center;
+}
+
 form.mailchimp {
   border: solid black 3px;
   padding: 3rem;
@@ -29,7 +36,8 @@ form.mailchimp > button {
   color: black;
 }
 
-.helperText > p {
+.helperText > p,
+.helperText > div {
   background-color: darkmagenta;
   color: #fff;
   width: fit-content;

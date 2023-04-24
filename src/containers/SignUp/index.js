@@ -1,15 +1,14 @@
+import useState from "react";
 import { Link } from "react-router-dom";
 import Header from "../Header";
 import Footer from "../Footer";
 import MailchimpSubscribe from "react-mailchimp-subscribe";
-import MailChimpForm from "../../components/MailchimpForm/MailchimpForm";
 import MailchimpFormRHF from "../../components/MailchimpFormRHF/index.js";
-import DotDigitalRHF from "../../components/DotDigitalRHF/index.js";
 
 import "./SignUp.css";
 
 const MCURL =
-  "https://gmail.us21.list-manage.com/subscribe/post?u=f14eff0c1307f46333b8f7f5f&amp;id=5ea669689a&amp;f_id=0028e7e1f0";
+  "https://coneyhq.us11.list-manage.com/subscribe/post?u=3ed2eca54aa8835691860eb0b&amp;id=5e35500c2e&amp;v_id=4544&amp;f_id=003b8de0f0";
 
 const SignUp = () => {
   return (
@@ -23,23 +22,36 @@ const SignUp = () => {
           <p>
             To be kept up to date with new releases and upcoming Zoom Bar events
           </p>
-          <p>By signing up you agree to our [Privacy Policy].</p>
+          <p>
+            By signing up you agree to our {""}
+            <a
+              href="https://coneyhq.org/privacy-cookies/"
+              target="_blank"
+              rel="noreferrer"
+              className="underline"
+            >
+              Privacy Policy
+            </a>
+            .
+          </p>
         </div>
         <div class="contentItem">
-          {/* <MailchimpSubscribe
+          <MailchimpSubscribe
             url={MCURL}
             render={({ subscribe, status, message }) => (
-              <MailchimpFormRHF
-                status={status}
-                message={message}
-                onValidated={(formData) => {
-                  subscribe(formData);
-                  console.log(formData);
-                }}
-              />
+              <div>
+                <MailchimpFormRHF
+                  status={status}
+                  message={message}
+                  onValidated={(formData) => {
+                    console.log("trying to submit");
+                    subscribe(formData);
+                    console.log(formData);
+                  }}
+                />
+              </div>
             )}
-          /> */}
-          <DotDigitalRHF />
+          />
         </div>
       </main>
       <Footer />

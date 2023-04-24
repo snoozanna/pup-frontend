@@ -13,6 +13,14 @@ const PiecesList = () => {
     <>
       <Header pageTitle={"Pieces to Play"} />
       <main className="pieces">
+        <div class="introCopy">
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio
+            mollitia quis delectus similique itaque quisquam officiis nobis
+            libero in neque est quaerat harum exercitationem, amet molestias
+            nesciunt repellat atque obcaecati.
+          </p>
+        </div>
         <Query query={PIECES_QUERY}>
           {({ data: { pieces } }) => {
             return <Pieces pieces={pieces.data} />;

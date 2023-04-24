@@ -65,12 +65,11 @@ img.logo {
 
 .landing-title > h1 {
   color: black;
+  /* color: white; */
   font-size: 7rem;
 
   width: fit-content;
   padding: 1rem;
-  color: black;
-
   margin: auto;
   margin-bottom: 2rem;
 }

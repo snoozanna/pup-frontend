@@ -8,6 +8,11 @@ import "./Footer.css";
 const Footer = () => {
   return (
     <footer>
+      <span class="website">
+        <a href="https://coneyhq.org/" target="_blank" rel="noreferrer">
+          Coney HQ
+        </a>
+      </span>
       <nav>
         <ul className="navWrapper">
           <li className="navItem">

@@ -1,8 +1,9 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import "./MailchimpForm.css";
 
-const MailChimpFormRHF = ({ status, message, onValidated }) => {
+const MailchimpFormRHF = ({ status, message, onValidated }) => {
+  // console.log(disclaimer);
   const {
     register,
     reset,
@@ -11,6 +12,7 @@ const MailChimpFormRHF = ({ status, message, onValidated }) => {
   } = useForm();
   // let email, fname, lname;
   const onSubmit = (data) => {
+    console.log("data", data);
     const { email, fname, lname } = data;
     email &&
       fname &&
@@ -27,6 +29,12 @@ const MailChimpFormRHF = ({ status, message, onValidated }) => {
     <>
       <div className="formWrapper">
         <form className="mailchimp" onSubmit={handleSubmit(onSubmit)}>
+          <p className="disclaimer">
+            Sign up to hear from us about Coney news, projects, shows and
+            adventures, as well as occasional updates about ways to support our
+            work.{" "}
+          </p>
+
           <div className="formItem">
             <label className="input-label">First Name</label>
             <input
@@ -40,19 +48,19 @@ const MailChimpFormRHF = ({ status, message, onValidated }) => {
               </div>
             )}
           </div>
-          <div class="formItem">
-            <label class="input-label">Last Name</label>
+          <div className="formItem">
+            <label className="input-label">Last Name</label>
             <input {...register("lname")} placeholder="Last Name" />
           </div>
-          <div class="formItem">
-            <label class="input-label">Email</label>
+          <div className="formItem">
+            <label className="input-label">Email</label>
             <input
               {...register("email", { required: "Email Address is required" })}
               placeholder="Email address"
               aria-invalid={errors.email ? "true" : "false"}
             />
             {errors.email && (
-              <div class="helperText">
+              <div className="helperText">
                 <p role="alert">{errors.email?.message}</p>
               </div>
             )}
@@ -60,12 +68,12 @@ const MailChimpFormRHF = ({ status, message, onValidated }) => {
 
           <button
             type="submit"
-            class="raise"
+            className="raise"
             disabled={status === "success" ? true : false}
           >
             {status === "success" ? "Submitted" : "Submit"}
           </button>
-          <div class="helperText">
+          <div className="helperText">
             {status === "sending" && <div>sending...</div>}
             {status === "error" && (
               <div dangerouslySetInnerHTML={{ __html: message }} />
@@ -80,4 +88,4 @@ const MailChimpFormRHF = ({ status, message, onValidated }) => {
   );
 };
 
-export default MailChimpFormRHF;
+export default MailchimpFormRHF;

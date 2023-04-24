@@ -1,23 +1,23 @@
-import { Link } from "react-router-dom";
 import { useEffect } from "react";
 import Header from "./../Header";
 import Footer from "./../Footer";
 import Query from "./../../components/Query/index.js";
-import NOTICES_QUERY from "../../queries/notices/notices";
+import HOMEPAGE_QUERY from "../../queries/homepage/homepage";
+import Rabbit from "../../components/Rabbit";
+import ReactMarkdown from "react-markdown";
+import rehypeRaw from "rehype-raw";
 import SpinMenu from "./../../components/SpinMenu/index.js";
-import Note from "./../../components/Note/index.js";
-import Polaroid from "./../../components/Polaroid/index.js";
-import rabbit from "./../../assets/rabbit.png";
+
 import "./Home.css";
 const Home = () => {
   useEffect(() => {
     document.title = "Notice Board";
   }, []);
   return (
-    <Query query={NOTICES_QUERY}>
-      {({ data: { notices } }) => {
-        notices = notices.data;
-
+    <Query query={HOMEPAGE_QUERY}>
+      {({ data: { homepage } }) => {
+        homepage = homepage.data;
+        console.log("homepage data", homepage);
         return (
           <>
             <Header pageTitle={""} />
@@ -26,27 +26,13 @@ const Home = () => {
               <section className="info">
                 <div className="info-wrapper">
                   <h2>Welcome to The Pop Up Playhouse</h2>
-                  <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Est
-                    sit iure quo, beatae possimus velit! Saepe, laudantium
-                    nesciunt. Deserunt vel distinctio molestiae rerum, doloribus
-                    exercitationem omnis ipsam saepe nesciunt animi.{" "}
-                  </p>
-
-                  <p>
-                    All play is presented for free, but we invite a Pay What You
-                    Can donation.
-                  </p>
+                  <ReactMarkdown
+                    children={homepage.attributes.copy}
+                    rehypePlugins={[rehypeRaw]}
+                  ></ReactMarkdown>{" "}
                 </div>
               </section>
-              <a
-                href="http://www.unregisteredsite.net/unmarkedentrance/"
-                target="_blank"
-                rel="noreferrer"
-                className="rabbit"
-              >
-                <img src={rabbit} alt="rabbit" />
-              </a>
+              <Rabbit />
             </main>
             <Footer />
           </>

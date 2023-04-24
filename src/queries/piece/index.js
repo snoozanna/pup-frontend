@@ -14,14 +14,7 @@ const PIECE_QUERY = gql`
           fullDescription
           revealText
           oneline
-          category {
-            data {
-              attributes {
-                slug
-                name
-              }
-            }
-          }
+
           image {
             data {
               attributes {

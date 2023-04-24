@@ -6,7 +6,7 @@ const Header = ({ pageTitle, tagline }) => {
   return (
     <>
       <header>
-        <div class="pageTitleWrapper">
+        <div className="pageTitleWrapper">
           {pageTitle ? <h1 className="funtitle">{pageTitle}</h1> : null}
           <h2 className="tagline">{tagline}</h2>
         </div>

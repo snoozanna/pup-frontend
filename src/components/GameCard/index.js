@@ -14,7 +14,7 @@ const GameCard = ({ piece }) => {
 
   return (
     <Link
-      to={`/piece/${piece.attributes.slug}`}
+      to={`/pieces/${piece.attributes.slug}`}
       className="uk-link-reset piece"
     >
       <div className="piece-wrapper">

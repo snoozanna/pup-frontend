@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import Header from "./../Header";
 import Footer from "./../Footer";
+import Rabbit from "../../components/Rabbit";
 import Query from "./../../components/Query/index.js";
 import ZOOMBAR_QUERY from "../../queries/whatson/whatson";
 import ReactMarkdown from "react-markdown";
@@ -18,7 +19,7 @@ const WhatsOn = () => {
           return (
             <>
               <Header
-                pageTitle={"Whats On"}
+                pageTitle={"What's On"}
                 tagline={"in the Coney Zoom bar"}
               />
               <main className="whatson">
@@ -27,7 +28,7 @@ const WhatsOn = () => {
                   rehypePlugins={[rehypeRaw]}
                 ></ReactMarkdown>{" "}
               </main>
-              <SpinMenu />
+              <Rabbit />
               <Footer />
             </>
           );

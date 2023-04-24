@@ -10,15 +10,21 @@ main.whatson > h2.tagline {
   display: inline-block;
 }
 
-.event {
-  margin-bottom: 4rem;
-  max-width: 1080px;
+main.whatson .event {
+  margin-bottom: 5rem;
+  /* max-width: 1080px; */
   display: flex;
   flex-direction: column;
+  text-align: center;
 }
 
-.eventTitle {
+main.whatson .event > p {
+  margin-bottom: 1rem;
+}
+
+main.whatson > .event > h3.eventTitle {
   font-size: 3rem;
+  color: white;
   font-weight: 400;
 }
 
