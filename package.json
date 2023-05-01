@@ -2,7 +2,7 @@
   "name": "frontend",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://youhavefoundconey.net/suzanna/",
+  "homepage": "https://youhavefoundconey.net/pop-up/",
   "dependencies": {
     "@apollo/client": "3.5.10",
     "@apollo/react-hooks": "^4.0.0",
