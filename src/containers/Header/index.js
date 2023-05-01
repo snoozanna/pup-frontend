@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import "./Header.css";
 
 const Header = ({ pageTitle, tagline }) => {
-  console.log(pageTitle);
+  // console.log(pageTitle);
   return (
     <>
       <header>

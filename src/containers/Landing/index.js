@@ -28,7 +28,7 @@ const Landing = () => {
             by <span className="coney">Coney</span>
           </p>
           {showForm ? (
-            <Link to={`/pieces`} className="uk-link-reset">
+            <Link to={`/home`} className="uk-link-reset">
               <button className="raise yellow "> Take me in!</button>
             </Link>
           ) : (

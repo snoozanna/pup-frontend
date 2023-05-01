@@ -214,3 +214,10 @@ button.green {
 button.green:hover {
   cursor: pointer;
 }
+
+button.orange {
+  background-color: var(--orange);
+  padding: 3px 8px;
+  border: black 1px solid;
+  color: black;
+}

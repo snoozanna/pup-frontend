@@ -1,12 +1,12 @@
 import { useEffect } from "react";
 import Header from "./../Header";
+import SimpleRandomPiece from "./../../components/SimpleRandomPiece";
 import Footer from "./../Footer";
 import Query from "./../../components/Query/index.js";
 import HOMEPAGE_QUERY from "../../queries/homepage/homepage";
 import Rabbit from "../../components/Rabbit";
 import ReactMarkdown from "react-markdown";
 import rehypeRaw from "rehype-raw";
-import SpinMenu from "./../../components/SpinMenu/index.js";
 
 import "./Home.css";
 const Home = () => {
@@ -21,7 +21,7 @@ const Home = () => {
         return (
           <>
             <Header pageTitle={""} />
-            <SpinMenu />
+
             <main className="home">
               <section className="info">
                 <div className="info-wrapper">
@@ -31,9 +31,12 @@ const Home = () => {
                     rehypePlugins={[rehypeRaw]}
                   ></ReactMarkdown>{" "}
                 </div>
+                {/* <SimpleRandomPiece /> */}
               </section>
+
               <Rabbit />
             </main>
+
             <Footer />
           </>
         );

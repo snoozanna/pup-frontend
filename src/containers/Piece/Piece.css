@@ -46,9 +46,8 @@ h3.pieceTitle {
 .keyInfo {
   /* border: solid 1px black; */
   grid-area: d;
-  padding: 1rem;
-  background-color: antiquewhite;
-  opacity: 0.4;
+  padding: 2rem;
+  background-color: var(--orange);
   color: black;
 }
 

@@ -1,8 +1,6 @@
 import { useState, useEffect, useCallback } from "react";
 import { useQuery } from "@apollo/client";
 import { useForm } from "react-hook-form";
-import { yupResolver } from "@hookform/resolvers/yup";
-import * as yup from "yup";
 import { Link } from "react-router-dom";
 import { useParams } from "react-router";
 // import Query from "./../../components/Query/index.js";
@@ -68,10 +66,18 @@ const Piece = () => {
 
   // TODO check this deconstruction - doesn't work in the return code
   // if (data.pieces.data.length) {
-  //   const { title, credits, fullDescription, playtime, image, instructions, players } =
-  //     data.pieces.data[0].attributes;
+  //   const {
+  //     title,
+  //     credits,
+  //     fullDescription,
+  //     playtime,
+  //     image,
+  //     instructions,
+  //     players,
+  //   } = data.pieces.data[0].attributes;
+  //   console.log(title);
   // } else {
-  //   console.log("problem fetching data")
+  //   console.log("problem fetching data");
   // }
 
   // FORM

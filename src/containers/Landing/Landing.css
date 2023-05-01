@@ -118,6 +118,11 @@ button.raise.yellow {
     flex-direction: column;
   }
 
+  section.landing > .landingFormWrapper {
+    max-width: 80%;
+    margin-block-end: 4rem;
+  }
+
   .landing-title > h1 {
     font-size: 4rem;
   }

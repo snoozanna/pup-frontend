@@ -1,27 +1,49 @@
-.formWrapper {
+.giftaidformWrapper {
   display: flex;
   flex-direction: column;
 }
-form.dd {
+
+form.giftaid {
   border: solid black 3px;
   padding: 3rem;
   border-radius: 5px;
   background-color: var(--orange);
   position: relative;
+  max-width: 800px;
 }
 
-form.dd > .formItem > input {
+form.giftaid > h3 {
+  letter-spacing: 0.4rem;
+  font-size: 2rem;
+}
+
+form.giftaid > .formItem {
+  width: 100%;
+  display: flex;
+  font-weight: 300;
+}
+
+form.giftaid > .formItem {
   margin-block-end: 1rem;
 }
 
-form.dd > .formItem {
-  margin-block-end: 3rem;
-  display: flex;
-  justify-content: flex-start;
-  flex-direction: column;
+form.giftaid > .formItem > label.multiple {
+  margin-inline-end: 2rem;
 }
 
-form.dd > button {
+form.giftaid > .formItem > label > input[type="number"] {
+  min-width: 60px;
+  max-width: 100px;
+}
+
+form.giftaid > .formItem > label > textarea {
+  background-color: transparent;
+  border: 3px solid black;
+  padding: 1rem;
+  border-radius: 10px;
+}
+
+form.giftaid > button {
   width: fit-content;
   margin: auto;
   padding: 0.6rem;
@@ -29,47 +51,30 @@ form.dd > button {
   color: black;
 }
 
-.helperText > p {
-  background-color: darkmagenta;
-  color: #fff;
-  width: fit-content;
-  padding: 0.6rem;
-  text-align: center;
-  margin: auto;
-  font-size: 1.4rem;
-  position: absolute;
-  left: -5rem;
-  bottom: -3rem;
-  margin-block-end: 0;
-  font-size: 1.4rem;
+.giftaidformWrapper > form.giftaid > .formItem > label {
+  align-items: end;
+  justify-content: flex-start;
+  color: black;
 }
 
-/* .helperText > p {
+.giftaidformWrapper > form.giftaid > .formItem > label.number > input {
+  margin-block-end: 0;
+  margin: 0 1rem;
+  /* color: white; */
+}
 
-} */
-
-input {
-  display: block;
-  width: 100%;
-  font-size: var(--font-size);
-  line-height: var(--font-size) * 2;
-  font-family: var(--font-headings);
-  color: black !important;
-  margin-bottom: var(--font-size) * 2;
-  border: none;
-  border-bottom: 3px solid rgba(0, 0, 0, 1);
-  background: transparent;
-  min-width: 250px;
-  padding-left: 5px;
-  outline: none;
+.giftaidformWrapper > form.giftaid > .formItem > label > p {
+  margin-block-end: 0;
 }
 
 input::placeholder {
   color: black;
 }
 
-input:focus {
-  border-bottom: 5px solid white;
+form.giftaid > input:focus {
+  border-bottom: 1px solid white;
+  background-color: rgb(88, 83, 83);
+  color: white;
 }
 
 .input-label {
@@ -102,6 +107,27 @@ label.wrap {
 }
 
 @media (max-width: 768px) {
+  form.giftaid {
+    max-width: 100%;
+  }
+  form.giftaid > .formItem {
+    flex-direction: column;
+    margin-block-end: 2rem;
+  }
+
+  .giftaidformWrapper > form.giftaid > .formItem > label {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .giftaidformWrapper > form.giftaid > .formItem > label.center {
+    align-items: center;
+  }
+
+  .giftaidformWrapper > form.giftaid > .formItem > label > span {
+    width: 100%;
+  }
+
   .helperText > p {
     left: 3rem;
     bottom: -3rem;

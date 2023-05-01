@@ -106,12 +106,12 @@ https://coneyhq.org/privacy-cookies/"
               </div>
             )}
           </div>
-          <div class="formItem">
-            <label class="input-label">Last Name</label>
+          <div className="formItem">
+            <label className="input-label">Last Name</label>
             <input {...register("cd_LASTNAME")} placeholder="Last Name" />
           </div>
-          <div class="formItem">
-            <label class="input-label" htmlFor="email">
+          <div className="formItem">
+            <label className="input-label" htmlFor="email">
               Email
             </label>
             <input
@@ -120,12 +120,12 @@ https://coneyhq.org/privacy-cookies/"
               aria-invalid={errors.email ? "true" : "false"}
             />
             {errors.email && (
-              <div class="helperText">
+              <div className="helperText">
                 <p role="alert">{errors.email?.message}</p>
               </div>
             )}
           </div>
-          <div class="prefWrapper">
+          <div className="prefWrapper">
             <input
               type="hidden"
               name="ADDRESSBOOK_2700_unchecked"
@@ -134,11 +134,11 @@ https://coneyhq.org/privacy-cookies/"
             />
 
             <input {...register("ADDRESSBOOK_2700")} type="checkbox" />
-            <label class="wrap" htmlFor="ADDRESSBOOK_2700">
+            <label className="wrap" htmlFor="ADDRESSBOOK_2700">
               Possible donors
             </label>
           </div>
-          <div class="prefWrapper">
+          <div className="prefWrapper">
             <input
               type="hidden"
               name="ADDRESSBOOK_2702_unchecked"
@@ -150,11 +150,11 @@ https://coneyhq.org/privacy-cookies/"
               {...register("ADDRESSBOOK_2702")}
               id="ADDRESSBOOK_2702"
             />
-            <label class="wrap" htmlFor="ADDRESSBOOK_2702">
+            <label className="wrap" htmlFor="ADDRESSBOOK_2702">
               Network of Coney
             </label>
           </div>
-          <div class="prefWrapper">
+          <div className="prefWrapper">
             <input
               type="checkbox"
               {...register("ci_userConsentCheckBox", {
@@ -169,7 +169,7 @@ https://coneyhq.org/privacy-cookies/"
                   href="https://coneyhq.org/privacy-cookies/"
                   target="_blank"
                   rel="noreferrer"
-                  class="highlighted"
+                  className="highlighted"
                 >
                   Privacy Policy
                 </a>
@@ -178,12 +178,12 @@ https://coneyhq.org/privacy-cookies/"
           </div>
           <button
             type="submit"
-            class="raise"
+            className="raise"
             disabled={status === "success" ? true : false}
           >
             {status === "success" ? "Submitted" : "Submit"}
           </button>
-          {/* <div class="helperText">
+          {/* <div className="helperText">
             {status === "sending" && <div>sending...</div>}
             {status === "error" && (
               <div dangerouslySetInnerHTML={{ __html: message }} />

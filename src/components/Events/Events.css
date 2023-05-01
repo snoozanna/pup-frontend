@@ -1,0 +1,22 @@
+.eventlist-container {
+  display: flex;
+  /* flex-wrap: wrap; */
+  flex-direction: column;
+  padding: 2rem;
+  gap: 2.5rem;
+}
+
+.eventlist-container > a.event {
+  width: 30%;
+}
+
+@media (max-width: 768px) {
+  .eventlist-container {
+    padding: 0;
+    gap: 2rem;
+    justify-content: flex-start;
+  }
+  .eventlist-container > a.piece {
+    width: 46%;
+  }
+}

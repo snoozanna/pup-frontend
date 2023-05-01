@@ -14,7 +14,7 @@ const PIECE_QUERY = gql`
           fullDescription
           revealText
           oneline
-
+          url
           image {
             data {
               attributes {

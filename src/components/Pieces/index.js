@@ -11,8 +11,13 @@ const Pieces = ({ pieces }) => {
     <div className="pieces-container">
       {pieces.map((piece) => {
         //  TODO THIS KEY NOT WORKING
+
         return (
-          <GameCard piece={piece} key={`piece__${piece.attributes.slug}`} />
+          <GameCard
+            piece={piece}
+            key={`piece__${piece.attributes.title}`}
+            // key={2}
+          />
         );
       })}
     </div>

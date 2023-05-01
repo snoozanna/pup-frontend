@@ -1,17 +1,17 @@
 import { Link } from "react-router-dom";
-import Pieces from "../../components/Pieces";
+import Events from "../../components/Events";
 
 import Header from "../Header";
 import Footer from "../Footer";
 import Query from "../../components/Query";
-import PIECES_QUERY from "../../queries/pieces/pieces";
+import EVENTS_QUERY from "../../queries/events/events.js";
 // import GameNav from "../../components/GameNav";
 import "./Pieces.css";
 
-const PiecesList = () => {
+const EventsList = () => {
   return (
     <>
-      <Header pageTitle={"Pieces to Play"} />
+      <Header pageTitle={"Whats on"} />
       <main className="pieces">
         <div className="introCopy">
           <p>
@@ -21,9 +21,9 @@ const PiecesList = () => {
             nesciunt repellat atque obcaecati.
           </p>
         </div>
-        <Query query={PIECES_QUERY}>
-          {({ data: { pieces } }) => {
-            return <Pieces pieces={pieces.data} />;
+        <Query query={EVENTS_QUERY}>
+          {({ data: { zoombarevents } }) => {
+            return <Events zoombarevents={zoombarevents.data} />;
           }}
         </Query>
       </main>
@@ -32,4 +32,4 @@ const PiecesList = () => {
   );
 };
 
-export default PiecesList;
+export default EventsList;

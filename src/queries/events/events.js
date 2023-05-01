@@ -1,18 +1,14 @@
 import gql from "graphql-tag";
 
-const EVENT_QUERY = gql`
-  query Event($slug: String!) {
-    zoombarevents(filters: { slug: { eq: $slug } }) {
+const EVENTS_QUERY = gql`
+  query Events {
+    zoombarevents {
       data {
         attributes {
           slug
           title
           tagline
-          copy
-          date
-          time
           dateTime
-          bookingLink
           tags {
             data {
               attributes {
@@ -34,4 +30,4 @@ const EVENT_QUERY = gql`
   }
 `;
 
-export default EVENT_QUERY;
+export default EVENTS_QUERY;

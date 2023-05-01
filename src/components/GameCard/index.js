@@ -3,20 +3,19 @@ import { Link } from "react-router-dom";
 import "./GameCard.css";
 
 const GameCard = ({ piece }) => {
+  // console.log(piece.attributes);
+  const { title, oneline, slug } = piece.attributes;
   const imageUrl =
     // process.env.NODE_ENV !== "development"
     //   ? "http://localhost:1337" + piece.attributes.image.data.attributes.url
     //   : // : "http://localhost:1337" +
     //     //  : process.env.REACT_APP_BACKEND_URL +
     piece.attributes.image.data.attributes.url;
-  // console.log("imageURL", imageUrl);
+
   const tags = piece.attributes.tags.data;
 
   return (
-    <Link
-      to={`/pieces/${piece.attributes.slug}`}
-      className="uk-link-reset piece"
-    >
+    <Link to={`/pieces/${slug}`} className="uk-link-reset piece">
       <div className="piece-wrapper">
         <div className="img-wrapper">
           <img
@@ -26,12 +25,16 @@ const GameCard = ({ piece }) => {
           />
         </div>
         <div className="pieceInfoWrapper">
-          <h3>{piece.attributes.title}</h3>
-          <p>{piece.attributes.oneline}</p>
+          <h3>{title}</h3>
+          <p>{oneline}</p>
         </div>
         <div className="tags-wrapper">
           {tags.map((tag) => {
-            return <div className="tag-item "> {tag.attributes.name} </div>;
+            return (
+              <div className="tag-item" key={tag.attributes.name}>
+                {tag.attributes.name}{" "}
+              </div>
+            );
           })}
         </div>
       </div>

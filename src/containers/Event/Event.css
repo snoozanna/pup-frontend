@@ -5,8 +5,17 @@ main.event-wrapper {
   grid-template-areas:
     "a b"
     "c d";
-  gap: 2rem;
+  gap: 4rem;
   /* height: 90vh; */
+}
+
+main.event-wrapper > .title-wrapper > p.tagline {
+  font-family: var(--font-headings);
+  font-size: 2.3rem;
+}
+
+main.event-wrapper > .title-wrapper > .tags-wrapper > .tag-item {
+  font-size: 1.6rem;
 }
 
 .event-container.title {
@@ -46,9 +55,8 @@ h3.eventTitle {
 .keyInfo {
   /* border: solid 1px black; */
   grid-area: d;
-  padding: 1rem;
-  background-color: antiquewhite;
-  opacity: 0.4;
+  padding: 2rem;
+  background-color: var(--orange);
   color: black;
 }
 

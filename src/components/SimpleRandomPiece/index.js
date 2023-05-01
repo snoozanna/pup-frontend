@@ -4,9 +4,9 @@ import { animated, useSpring } from "@react-spring/web";
 import Query from "../Query/index.js";
 import PIECES_QUERY from "../../queries/pieces/pieces";
 import { Link } from "react-router-dom";
-import "./SpinMenu.css";
+import "./SimpleRandomPiece.css";
 
-const SpinMenu = () => {
+const SimpleRandomPiece = () => {
   const [random, setRandom] = useState(null);
   const [color, setColor] = useState("green");
   const colors = ["yellow", "blue", "pink", "green"];
@@ -56,9 +56,12 @@ const SpinMenu = () => {
           };
           return (
             <>
-              <div className="spinMenuWrapper">
+              <div className="">
+                <button onClick={handleClick}>
+                  <span className="">Pick a game for me</span>
+                </button>
                 <animated.div
-                  className={`pickRandom circle ${color}`}
+                  className={` ${color}`}
                   onClick={handleClick}
                   style={{ ...springs }}
                 >
@@ -76,17 +79,15 @@ const SpinMenu = () => {
                   </div> */}
                 </animated.div>
 
-                <div className="randomTitleWrapper">
+                <div className="">
                   {random ? (
                     <Link
                       to={`/pieces/${random.attributes.slug}`}
                       className="uk-link-reset"
                     >
-                      <h2 className="pick ">{random.attributes.title}</h2>
+                      <h2 className=" ">{random.attributes.title}</h2>
                     </Link>
-                  ) : (
-                    <h2 className="pick">Pick a game for me</h2>
-                  )}
+                  ) : null}
                 </div>
               </div>
             </>
@@ -97,4 +98,4 @@ const SpinMenu = () => {
   );
 };
 
-export default SpinMenu;
+export default SimpleRandomPiece;

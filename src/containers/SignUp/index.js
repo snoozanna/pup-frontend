@@ -17,7 +17,7 @@ const SignUp = () => {
       <main className="signup contentWrapper">
         {/* <SimpleForm url={MCURL} /> */}
 
-        <div class="contentItem">
+        <div className="contentItem">
           <h2>Sign up for our mailing list</h2>
           <p>
             To be kept up to date with new releases and upcoming Zoom Bar events
@@ -35,7 +35,7 @@ const SignUp = () => {
             .
           </p>
         </div>
-        <div class="contentItem">
+        <div className="contentItem">
           <MailchimpSubscribe
             url={MCURL}
             render={({ subscribe, status, message }) => (

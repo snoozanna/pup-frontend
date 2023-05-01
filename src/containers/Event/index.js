@@ -16,9 +16,20 @@ const Event = () => {
   });
   if (loading) return <Loader />;
   if (error) return <p>Error: {JSON.stringify(error)}</p>;
-  console.log(data, "data");
-  console.log(slug);
 
+  console.log(data, "data");
+  if (data.zoombarevents.data[0].attributes.title) {
+    console.log("yes");
+  }
+  const { title, tagline, dateTime, bookingLink, copy } =
+    data.zoombarevents.data[0].attributes;
+
+  console.log(bookingLink);
+  if (bookingLink) {
+    console.log(bookingLink);
+  } else {
+    console.log("no booking link");
+  }
   const imageUrl =
     data.zoombarevents.data[0].attributes.image.data.attributes.url;
   const tags = data.zoombarevents.data[0].attributes.tags.data;
@@ -45,32 +56,45 @@ const Event = () => {
         />
         <div className="title-wrapper">
           <h1>{data.zoombarevents.data[0].attributes.title}</h1>
-          <p>{data.zoombarevents.data[0].attributes.tagline}</p>
+          <p className="tagline">
+            {data.zoombarevents.data[0].attributes.tagline}
+          </p>
           <div className="tags-wrapper">
             {tags.map((tag) => {
               return <div className="tag-item "> {tag.attributes.name} </div>;
             })}
           </div>
         </div>
-        <div className="keyInfo">
-          <h3 className="eventTitle">Date</h3>
-          <p>{data.zoombarevents.data[0].attributes.date}</p>
-          <h3 className="eventTitle">Time</h3>
-          <p>{data.zoombarevents.data[0].attributes.time}</p>
-        </div>
-        <div className="description">
-          <ReactMarkdown
-            children={data.zoombarevents.data[0].attributes.copy}
-            // children={pmarkdown}
-            rehypePlugins={[rehypeRaw]}
-          ></ReactMarkdown>
-          <a
-            href={data.zoombarevents.data[0].attributes.bookingLink}
-            class="book"
-          >
-            <button class="green">Book</button>
-          </a>
-        </div>
+        {dateTime ? (
+          <div className="keyInfo">
+            <h3 className="eventTitle">Dates & Times</h3>
+            <br />
+            <ReactMarkdown
+              children={dateTime}
+              // children={pmarkdown}
+              rehypePlugins={[rehypeRaw]}
+            ></ReactMarkdown>
+
+            {bookingLink ? (
+              <a
+                href={bookingLink}
+                class="book"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <button className="green">Book</button>
+              </a>
+            ) : null}
+          </div>
+        ) : null}
+        {copy ? (
+          <div className="description">
+            <ReactMarkdown
+              children={copy}
+              rehypePlugins={[rehypeRaw]}
+            ></ReactMarkdown>
+          </div>
+        ) : null}
       </main>
       <Footer />
     </>

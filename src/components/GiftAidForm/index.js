@@ -2,7 +2,7 @@ import { useRef, useState } from "react";
 import { useForm } from "react-hook-form";
 import "./GiftAidForm.css";
 import emailjs from "@emailjs/browser";
-const GiftAidForm = ({ status, message, onValidated }) => {
+const GiftAidForm = () => {
   //   Arrive at the form
   // Button to next dynamically populate
   // Or go straight to the game
@@ -24,7 +24,7 @@ const GiftAidForm = ({ status, message, onValidated }) => {
         // "YOUR_SERVICE_ID",
         "service_m9f7j4v",
         // "YOUR_TEMPLATE_ID",
-        "template_zfe2dhc",
+        "template_pdz1zvn",
         form.current,
         // "YOUR_PUBLIC_KEY",
         "vBWVf7sYQ5SNXH8tb",
@@ -43,41 +43,54 @@ const GiftAidForm = ({ status, message, onValidated }) => {
 
   return (
     <>
-      <div className="formWrapper">
-        <form class="contact" onSubmit={handleSubmit(onSubmit)} ref={form}>
-          <label>
+      <form className="giftaid" onSubmit={handleSubmit(onSubmit)} ref={form}>
+        <h3>Gift Aid</h3>
+        <div className="formItem">
+          <label className="number center">
+            I want to Gift Aid my donation of £{" "}
+            <input type="number" step="0.01" /> to Coney
             {/* TODO allow them to change amount */}
-            <span>I want to Gift Aid my donation of [...] to Coney</span>
+          </label>
+        </div>
+        <div className="formItem">
+          <label className="center">
+            <p>
+              <span> Are you able to confirm that:</span>
+              <br /> You are a UK taxpayer, or have been in the last 4 years and
+              The amount of income and/or capital gains tax you pay is at least
+              as much as we will reclaim on your donations in this tax year.
+            </p>
             <select {...register("consentGA", { required: true })}>
               <option value="yes">Yes</option>
               <option value="no">No</option>
             </select>
           </label>
-          I am a UK taxpayer and understand that if I pay less Income Tax and/or
-          Capital Gains Tax in the current tax year than the amount of Gift Aid
-          claimed on all my donations it is my responsibility to pay any
-          difference.
-          <h3> My Details</h3>
-          <label>
+        </div>
+        <h3> Your Details</h3>
+        <div className="formItem ">
+          <label className="multiple">
             <span>First Name</span>
             <input
-              {...register("player_name", { required: true })}
-              aria-invalid={errors.player_name ? "true" : "false"}
+              {...register("fname", { required: true })}
+              aria-invalid={errors.fname ? "true" : "false"}
             />
-            {errors.player_name?.type === "required" && (
+            {errors.fname?.type === "required" && (
               <p role="alert">Name is required</p>
             )}
           </label>
+
           <label>
             <span>Last Name</span>
             <input
-              {...register("player_name", { required: true })}
-              aria-invalid={errors.player_name ? "true" : "false"}
+              {...register("lname", { required: true })}
+              aria-invalid={errors.lname ? "true" : "false"}
             />
-            {errors.player_name?.type === "required" && (
+            {errors.lname?.type === "required" && (
               <p role="alert">Name is required</p>
             )}
           </label>
+        </div>
+        <div className="formItem">
           <label>
             <span>Email</span>
             <input
@@ -86,7 +99,9 @@ const GiftAidForm = ({ status, message, onValidated }) => {
             />
             {errors.email && <p role="alert">{errors.email?.message}</p>}
           </label>
-          <label>
+        </div>
+        <div className="formItem ">
+          <label className="multiple">
             <span>Address</span>
             <textarea
               {...register("address", { required: "Address is required" })}
@@ -94,6 +109,7 @@ const GiftAidForm = ({ status, message, onValidated }) => {
             />
             {errors.address && <p role="alert">{errors.address?.message}</p>}
           </label>
+
           <label>
             <span>Postcode</span>
             <input
@@ -102,16 +118,28 @@ const GiftAidForm = ({ status, message, onValidated }) => {
             />
             {errors.postcode && <p role="alert">{errors.postcode?.message}</p>}
           </label>
+        </div>
+        <div className="formItem">
           <label>
             <span>Anything else we need to know?</span>
             <textarea {...register("message")} />
             {errors.mail && <p role="alert">{errors.mail?.message}</p>}
           </label>
-          <button disabled={submitted} loading={submitted} text="Save">
-            {submitted ? "Thanks!" : "Submit"}
+        </div>
+        {submitted ? (
+          <span>Thanks!</span>
+        ) : (
+          <button
+            disabled={submitted}
+            loading={submitted}
+            text="Save"
+            className={submitted ? "submitted" : "funButton"}
+          >
+            Submit
           </button>
-        </form>
-      </div>
+        )}{" "}
+      </form>
+      {submitted}
     </>
   );
 };

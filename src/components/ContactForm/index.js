@@ -40,7 +40,7 @@ export const ContactForm = () => {
   };
 
   return (
-    <form class="contact" onSubmit={handleSubmit(onSubmit)} ref={form}>
+    <form className="contact" onSubmit={handleSubmit(onSubmit)} ref={form}>
       <label>
         <span>Name</span>
         <input

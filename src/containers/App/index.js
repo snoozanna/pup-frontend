@@ -10,6 +10,7 @@ import OpenSesameForm from "./../OpenSesameForm/index.js";
 import Piece from "../Piece/index.js";
 import Event from "../Event/index.js";
 import PiecesList from "../Pieces/index.js";
+import EventsList from "../Events/index.js";
 import Tag from "../Tags/index.js";
 import WhatsOn from "../WhatsOn/index.js";
 import Footer from "../Footer";
@@ -27,8 +28,10 @@ function App() {
         <Route path="/os-form" element={<OpenSesameForm />} exact />
         <Route path="/sign-up" element={<SignUp />} exact />
         <Route path="/gift-aid" element={<GiftAid />} exact />
+        <Route path="/gift-aid/:slug" element={<GiftAid />} />
         <Route path="/pieces/:slug" element={<Piece />} exact />
         <Route path="/events/:slug" element={<Event />} exact />
+        <Route path="/events" element={<EventsList />} exact />
         <Route path="/tag/:slug" element={<Tag />} exact />
         <Route path="*" element={<NotFound />} />
       </Routes>

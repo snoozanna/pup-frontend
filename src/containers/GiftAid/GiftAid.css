@@ -1,13 +1,24 @@
-main.contentWrapper {
-  min-height: 60vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 2rem;
+main.giftaid.contentWrapper {
+  flex-direction: column;
+  text-align: center;
+  max-width: 1080px;
 }
 
-main.contentWrapper > .contentItem {
-  max-width: 50%;
+main.giftaid.contentWrapper > .contentItem {
+  width: 100%;
+  max-width: 800px;
+  margin: auto;
+  margin-block-end: 2rem;
+}
+
+main.giftaid.contentWrapper > .contentItem > button.pieceURL {
+  background-color: var(--pink);
+  font-weight: 800;
+  font-family: var(--font-headings);
+  letter-spacing: 0.4rem;
+}
+main.giftaid.contentWrapper > button.pieceURL > a {
+  text-transform: uppercase;
 }
 
 /* form {
