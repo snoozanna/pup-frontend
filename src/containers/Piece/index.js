@@ -1,7 +1,8 @@
-import { useState, useEffect, useCallback } from "react";
+import { useState, useEffect } from "react";
 import { useQuery } from "@apollo/client";
 import { useForm } from "react-hook-form";
 import { Link } from "react-router-dom";
+import SEO from "../../components/SEO/SEO";
 import { useParams } from "react-router";
 // import Query from "./../../components/Query/index.js";
 import ReactMarkdown from "react-markdown";
@@ -97,10 +98,21 @@ const Piece = () => {
     }
   };
   // }
-
+  const {
+    title,
+    url,
+    credits,
+    playtime,
+    instructions,
+    players,
+    revealText,
+    oneline,
+    fullDescription,
+  } = data.pieces.data[0].attributes;
   const imageUrl = data.pieces.data[0].attributes.image.data.attributes.url;
   return (
     <>
+      <SEO title={title} description={oneline} name={title} type="article" />
       <Header />
       <main className="piece-wrapper">
         <Link to={`/`}>
@@ -114,27 +126,23 @@ const Piece = () => {
             </p>
           </div>
         </Link>
-        <img
-          className="pieceImg"
-          src={imageUrl}
-          alt={data.pieces.data[0].attributes.image.data.attributes.url}
-        />
+        <img className="pieceImg" src={imageUrl} alt={imageUrl} />
         <div className="title-wrapper">
-          <h1>{data.pieces.data[0].attributes.title}</h1>
-          <p>{data.pieces.data[0].attributes.credits}</p>
+          <h1>{title}</h1>
+          <p>{credits}</p>
 
           <ReactMarkdown
-            children={data.pieces.data[0].attributes.fullDescription}
+            children={fullDescription}
             rehypePlugins={[rehypeRaw]}
           ></ReactMarkdown>
         </div>
         <div className="keyInfo">
           <h3 className="pieceTitle">Playtime</h3>
-          <p>{data.pieces.data[0].attributes.playtime}</p>
+          <p>{playtime}</p>
           <h3 className="pieceTitle">Instructions</h3>
-          <p>{data.pieces.data[0].attributes.instructions}</p>
+          <p>{instructions}</p>
           <h3 className="pieceTitle">Players</h3>
-          <p>{data.pieces.data[0].attributes.players}</p>
+          <p>{players}</p>
         </div>
         <div className="description">
           {accessViaPW ? (
@@ -164,7 +172,7 @@ const Piece = () => {
               {reveal ? (
                 <>
                   <ReactMarkdown
-                    children={data.pieces.data[0].attributes.revealText}
+                    children={revealText}
                     // children={pmarkdown}
                     rehypePlugins={[rehypeRaw]}
                   ></ReactMarkdown>
@@ -191,10 +199,3 @@ const Piece = () => {
 // </Query>
 
 export default Piece;
-
-// if access PW = true,
-// show form (dynamtic passphrase),
-// else show "I'd like to try"
-
-// If PW is successful, or "Id like to try button has been clicked"
-// show reveal text

@@ -1,5 +1,6 @@
 import React from "react";
 import { createRoot } from "react-dom/client";
+import { HelmetProvider } from "react-helmet-async";
 import { BrowserRouter as Router } from "react-router-dom";
 
 // import { ApolloProvider } from "@apollo/react-hooks";
@@ -16,7 +17,9 @@ const root = createRoot(document.getElementById("root"));
 root.render(
   <Router basename="/pop-up">
     <ApolloProvider client={client}>
-      <App />
+      <HelmetProvider>
+        <App />
+      </HelmetProvider>
     </ApolloProvider>
   </Router>,
 );

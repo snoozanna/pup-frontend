@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+
 import { useQuery } from "@apollo/client";
 import { useParams } from "react-router";
 import Header from "../Header";
@@ -11,15 +11,14 @@ import "./GiftAid.css";
 
 const GiftAid = () => {
   let { slug } = useParams();
-  console.log(slug);
-  const [game, setGame] = useState("");
+
   const [showForm, setShowForm] = useState(false);
   const { loading, error, data } = useQuery(PIECE_QUERY, {
     variables: { slug },
   });
   if (loading) return <Loader />;
   if (error) return <p>Error : {error.message}</p>;
-  console.log("data", data.pieces.data[0].attributes.url);
+
   const { title, url } = data.pieces.data[0].attributes;
   return (
     <>

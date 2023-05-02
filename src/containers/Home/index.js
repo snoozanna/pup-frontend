@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import Header from "./../Header";
-import SimpleRandomPiece from "./../../components/SimpleRandomPiece";
+// import SimpleRandomPiece from "./../../components/SimpleRandomPiece";
+import SEO from "../../components/SEO/SEO";
 import Footer from "./../Footer";
 import Query from "./../../components/Query/index.js";
 import HOMEPAGE_QUERY from "../../queries/homepage/homepage";
@@ -10,16 +11,19 @@ import rehypeRaw from "rehype-raw";
 
 import "./Home.css";
 const Home = () => {
-  useEffect(() => {
-    document.title = "Notice Board";
-  }, []);
   return (
     <Query query={HOMEPAGE_QUERY}>
       {({ data: { homepage } }) => {
         homepage = homepage.data;
-        console.log("homepage data", homepage);
+
         return (
           <>
+            <SEO
+              title={"Pop Up Playhouse"}
+              description={"By Coney"}
+              name={"Pop Up Playhouse"}
+              type="article"
+            />
             <Header pageTitle={""} />
 
             <main className="home">

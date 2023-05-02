@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { useEffect } from "react";
 import Events from "../../components/Events";
 
 import Header from "../Header";
@@ -9,6 +9,9 @@ import EVENTS_QUERY from "../../queries/events/events.js";
 import "./Pieces.css";
 
 const EventsList = () => {
+  useEffect(() => {
+    document.title = "Events";
+  }, []);
   return (
     <>
       <Header pageTitle={"Whats on"} />

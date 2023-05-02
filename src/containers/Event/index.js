@@ -1,4 +1,5 @@
 import { useQuery } from "@apollo/client";
+import SEO from "./../../components/SEO/SEO.js";
 import { Link } from "react-router-dom";
 import { useParams } from "react-router";
 import ReactMarkdown from "react-markdown";
@@ -17,24 +18,15 @@ const Event = () => {
   if (loading) return <Loader />;
   if (error) return <p>Error: {JSON.stringify(error)}</p>;
 
-  console.log(data, "data");
-  if (data.zoombarevents.data[0].attributes.title) {
-    console.log("yes");
-  }
   const { title, tagline, dateTime, bookingLink, copy } =
     data.zoombarevents.data[0].attributes;
 
-  console.log(bookingLink);
-  if (bookingLink) {
-    console.log(bookingLink);
-  } else {
-    console.log("no booking link");
-  }
   const imageUrl =
     data.zoombarevents.data[0].attributes.image.data.attributes.url;
   const tags = data.zoombarevents.data[0].attributes.tags.data;
   return (
     <>
+      <SEO title={title} description={tagline} name={title} type="article" />
       <Header />
       <main className="event-wrapper">
         <Link to={`/`}>
@@ -78,7 +70,7 @@ const Event = () => {
             {bookingLink ? (
               <a
                 href={bookingLink}
-                class="book"
+                className="book"
                 target="_blank"
                 rel="noreferrer"
               >

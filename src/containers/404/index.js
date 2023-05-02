@@ -1,7 +1,11 @@
 import { Link } from "react-router-dom";
+import { useEffect } from "react";
 
 import "./404.css";
 const NotFound = () => {
+  useEffect(() => {
+    document.title = "404";
+  }, []);
   return (
     <>
       <main className="notfound">

@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import SEO from "../../components/SEO/SEO";
 import MailchimpFormRHF from "../../components/MailchimpFormRHF";
 import MailchimpSubscribe from "react-mailchimp-subscribe";
 import "./Landing.css";
@@ -13,6 +14,12 @@ const Landing = () => {
 
   return (
     <>
+      <SEO
+        title={"Pop Up Playhouse Landing"}
+        description={"By Coney"}
+        name={"Pop Up Playhouse"}
+        type="article"
+      />
       <section className="landing">
         {/* <div className="yellow shape spinning"></div>
         <div className="blue shape spinning"></div>

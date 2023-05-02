@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { useEffect } from "react";
 import Header from "./../Header";
 import Footer from "./../Footer";
 import Rabbit from "../../components/Rabbit";
@@ -8,8 +8,11 @@ import ReactMarkdown from "react-markdown";
 import rehypeRaw from "rehype-raw";
 
 import "./WhatsOn.css";
-import SpinMenu from "../../components/SpinMenu";
+
 const WhatsOn = () => {
+  useEffect(() => {
+    document.title = "Whats On";
+  }, []);
   return (
     <>
       <Query query={ZOOMBAR_QUERY}>

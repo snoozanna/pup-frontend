@@ -1,6 +1,5 @@
-import { Link } from "react-router-dom";
 import Pieces from "../../components/Pieces";
-
+import SEO from "../../components/SEO/SEO";
 import Header from "../Header";
 import Footer from "../Footer";
 import Query from "../../components/Query";
@@ -11,6 +10,12 @@ import "./Pieces.css";
 const PiecesList = () => {
   return (
     <>
+      <SEO
+        title={"Pieces to Play"}
+        description={"Pop Up Playhouse"}
+        name={"Pieces to Play"}
+        type="article"
+      />
       <Header pageTitle={"Pieces to Play"} />
       <main className="pieces">
         <div className="introCopy">

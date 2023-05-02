@@ -1,5 +1,5 @@
-import useState from "react";
-import { Link } from "react-router-dom";
+import { useEffect } from "react";
+import SEO from "../../components/SEO/SEO";
 import Header from "../Header";
 import Footer from "../Footer";
 import MailchimpSubscribe from "react-mailchimp-subscribe";
@@ -13,6 +13,12 @@ const MCURL =
 const SignUp = () => {
   return (
     <>
+      <SEO
+        title={"Pop Up Playhouse Stay in Touch"}
+        description={"Sign up to our mailing list"}
+        name={"Pop Up Playhouse"}
+        type="article"
+      />
       <Header pageTitle={"Stay in Touch"} />
       <main className="signup contentWrapper">
         {/* <SimpleForm url={MCURL} /> */}

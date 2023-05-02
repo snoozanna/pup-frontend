@@ -9,8 +9,7 @@ const EVENT_QUERY = gql`
           title
           tagline
           copy
-          date
-          time
+
           dateTime
           bookingLink
           tags {

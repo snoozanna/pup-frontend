@@ -13,7 +13,6 @@ import PiecesList from "../Pieces/index.js";
 import EventsList from "../Events/index.js";
 import Tag from "../Tags/index.js";
 import WhatsOn from "../WhatsOn/index.js";
-import Footer from "../Footer";
 
 function App() {
   return (
