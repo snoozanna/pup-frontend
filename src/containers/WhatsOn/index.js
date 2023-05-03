@@ -25,6 +25,7 @@ const WhatsOn = () => {
                 pageTitle={"What's On"}
                 tagline={"in the Coney Zoom bar"}
               />
+
               <main className="whatson">
                 <ReactMarkdown
                   children={zoombar.attributes.content}

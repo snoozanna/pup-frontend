@@ -58,6 +58,7 @@ h3.eventTitle {
   padding: 2rem;
   background-color: var(--orange);
   color: black;
+  height: fit-content;
 }
 
 .buttonItem {

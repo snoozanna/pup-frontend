@@ -48,9 +48,20 @@ const GiftAidForm = () => {
         <div className="formItem">
           <label className="number center">
             I want to Gift Aid my donation of £{" "}
-            <input type="number" step="0.01" /> to Coney
+            <input
+              {...register("amount", { required: true })}
+              aria-invalid={errors.amount ? "true" : "false"}
+              type="number"
+              step="0.01"
+            />{" "}
+            to Coney
             {/* TODO allow them to change amount */}
           </label>
+          {errors.amount?.type === "required" && (
+            <div className="GAFormError">
+              <p role="alert">Amount is required</p>
+            </div>
+          )}
         </div>
         <div className="formItem">
           <label className="center">
@@ -75,7 +86,9 @@ const GiftAidForm = () => {
               aria-invalid={errors.fname ? "true" : "false"}
             />
             {errors.fname?.type === "required" && (
-              <p role="alert">Name is required</p>
+              <div className="GAFormError">
+                <p role="alert">Name is required</p>
+              </div>
             )}
           </label>
 
@@ -86,7 +99,9 @@ const GiftAidForm = () => {
               aria-invalid={errors.lname ? "true" : "false"}
             />
             {errors.lname?.type === "required" && (
-              <p role="alert">Name is required</p>
+              <div className="GAFormError">
+                <p role="alert">Name is required</p>
+              </div>
             )}
           </label>
         </div>
@@ -97,7 +112,11 @@ const GiftAidForm = () => {
               {...register("email", { required: "Email Address is required" })}
               aria-invalid={errors.email ? "true" : "false"}
             />
-            {errors.email && <p role="alert">{errors.email?.message}</p>}
+            {errors.email && (
+              <div className="GAFormError">
+                <p role="alert">{errors.email?.message}</p>
+              </div>
+            )}
           </label>
         </div>
         <div className="formItem ">
@@ -107,7 +126,11 @@ const GiftAidForm = () => {
               {...register("address", { required: "Address is required" })}
               aria-invalid={errors.address ? "true" : "false"}
             />
-            {errors.address && <p role="alert">{errors.address?.message}</p>}
+            {errors.address && (
+              <div className="GAFormError">
+                <p role="alert">{errors.address?.message}</p>
+              </div>
+            )}
           </label>
 
           <label>
@@ -116,14 +139,11 @@ const GiftAidForm = () => {
               {...register("postcode", { required: "postcode is required" })}
               aria-invalid={errors.postcode ? "true" : "false"}
             />
-            {errors.postcode && <p role="alert">{errors.postcode?.message}</p>}
-          </label>
-        </div>
-        <div className="formItem">
-          <label>
-            <span>Anything else we need to know?</span>
-            <textarea {...register("message")} />
-            {errors.mail && <p role="alert">{errors.mail?.message}</p>}
+            {errors.postcode && (
+              <div className="GAFormError">
+                <p role="alert">{errors.postcode?.message}</p>
+              </div>
+            )}
           </label>
         </div>
         {submitted ? (

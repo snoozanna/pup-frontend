@@ -73,6 +73,10 @@ p {
   font-size: 1.7rem;
 }
 
+em {
+  color: inherit;
+}
+
 main > .introCopy {
   padding: 2rem;
 }
