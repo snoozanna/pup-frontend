@@ -13,7 +13,7 @@ const Header = ({ pageTitle, tagline }) => {
         <Link to={`/home`}>
           <div className="siteTitleWrapper">
             <h2 className="siteTitle">
-              <span>The</span> <span>Pop Up</span>
+              <span>The</span> <span>Pop-Up</span>
               <span>Playhouse</span>
             </h2>
             <p className="siteCredit">

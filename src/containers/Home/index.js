@@ -19,9 +19,9 @@ const Home = () => {
         return (
           <>
             <SEO
-              title={"Pop Up Playhouse"}
+              title={"Pop-Up Playhouse"}
               description={"By Coney"}
-              name={"Pop Up Playhouse"}
+              name={"Pop-Up Playhouse"}
               type="article"
             />
             <Header pageTitle={""} />

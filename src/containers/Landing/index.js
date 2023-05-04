@@ -28,7 +28,7 @@ const Landing = () => {
 
         <div className="landing-title">
           <h1>
-            <span>The</span> <span>Pop Up</span>
+            <span>The</span> <span>Pop-Up</span>
             <span>Playhouse</span>
           </h1>
           <p className="siteCredit">
