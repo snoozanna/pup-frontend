@@ -130,11 +130,6 @@ const Piece = () => {
         <div className="title-wrapper">
           <h1>{title}</h1>
           <p>{credits}</p>
-
-          <ReactMarkdown
-            children={fullDescription}
-            rehypePlugins={[rehypeRaw]}
-          ></ReactMarkdown>
         </div>
         <div className="keyInfo">
           <h3 className="pieceTitle">Playtime</h3>
@@ -169,6 +164,10 @@ const Piece = () => {
             </>
           ) : (
             <>
+              <ReactMarkdown
+                children={fullDescription}
+                rehypePlugins={[rehypeRaw]}
+              ></ReactMarkdown>
               {reveal ? (
                 <>
                   <ReactMarkdown

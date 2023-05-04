@@ -29,7 +29,7 @@ const Home = () => {
             <main className="home">
               <section className="info">
                 <div className="info-wrapper">
-                  <h2>Welcome to The Pop Up Playhouse</h2>
+                  <h2>Welcome to The Pop-Up Playhouse</h2>
                   <ReactMarkdown
                     children={homepage.attributes.copy}
                     rehypePlugins={[rehypeRaw]}
