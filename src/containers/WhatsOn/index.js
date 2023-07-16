@@ -21,10 +21,7 @@ const WhatsOn = () => {
           console.log("zoombar", zoombar);
           return (
             <>
-              <Header
-                pageTitle={"What's On"}
-                tagline={"in the Coney Zoom bar"}
-              />
+              <Header pageTitle={"What's On"} />
 
               <main className="whatson">
                 <ReactMarkdown

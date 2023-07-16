@@ -19,15 +19,13 @@ const SignUp = () => {
         name={"Pop Up Playhouse"}
         type="article"
       />
-      <Header pageTitle={"Stay in Touch"} />
+      <Header pageTitle={"Stay in touch"} />
       <main className="signup contentWrapper">
         {/* <SimpleForm url={MCURL} /> */}
 
         <div className="contentItem">
           <h2>Sign up for our mailing list</h2>
-          <p>
-            To be kept up to date with new releases and upcoming Zoom Bar events
-          </p>
+          <p>To be kept up to date with new releases and upcoming events.</p>
           <p>
             By signing up you agree to our {""}
             <a
